@@ -1,0 +1,287 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Team11 - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Team 11" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/images/logo-sm.png">
+
+    <!-- common Css -->
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- X-editable css -->
+    <link type="text/css" href="~/css/plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding-top: 100px;
+            padding-bottom: 20px;
+        }
+
+        .navbar {
+            background-color: #eff6ee; /* Change background color */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand {
+            color: #0c120c; /* Change text color */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff; /* Change color of the toggler icon */
+        }
+
+        .navbar-nav {
+            text-align: center; /* Center the navigation links */
+        }
+
+        .nav-link {
+            color: #0c120c; /* Change text color */
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px; /* Add border-radius for a rounded look */
+            transition: background-color 0.3s ease; /* Add a smooth transition effect */
+        }
+
+      
+
+        .nav-link:hover {
+            background-color: #c0c0c0; /* New background color on hover */
+            color: #ffffff; /* New text color on hover */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
+        }
+
+        footer {
+            background-color: #343a40; /* Match the navbar background color */
+            color: #ffffff; /* Change text color */
+            padding-top: 20px;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            flex-shrink: 0;
+            color: black;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container"> 
+                <a class="navbar-brand" href="#">Test Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">
+                                Home
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","AdminBlog")">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+        <div id="add-new" class="modal fade bd-example-modal-lg" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myLargeModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- [ Model Body ] -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="adminteam" class="modal fade bd-example-modal-lg" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myLargeModalLabel"></h5>
+                        <button type="button" class="btn-close" onclick="reloadPage()" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- [ Model Body ] -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="loadings" hidden class="loader">
+            <center>
+                <span class="fa fa-spinner fa-spin fa-3x"></span>
+            </center>
+        </div>
+
+    
+        <footer class="py-5 bg-light">
+            <div class="container">
+                <p class="m-0 text-center">Test Blog &copy; 2023</p>
+            </div>
+         
+        </footer>
+
+        <script src="~/lib/js/jquery.min.js"></script>
+        <script src="~/lib/js/bootstrap.bundle.min.js"></script>
+        <script src="~/lib/js/metismenu.min.js"></script>
+        <script src="~/lib/js/waves.js"></script>
+        <script src="~/lib/js/feather.min.js"></script>
+        <script src="~/lib/js/simplebar.min.js"></script>
+        <script src="~/lib/js/moment.js"></script>
+        <script src="~/css/plugins/daterangepicker/daterangepicker.js"></script>
+        <script src="~/css/plugins/apex-charts/apexcharts.min.js"></script>
+        <script src="~/css/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="~/css/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="~/lib/pages/jquery.analytics_dashboard.init.js"></script>
+        <script>
+            function reloadPage() {
+                location.reload();
+            }
+        </script>
+
+        <!-- Plugins js -->
+
+        <script src="~/css/plugins/select2/select2.min.js"></script>
+        @* <script src="~/css/plugins/huebee/huebee.pkgd.min.js"></script>*@
+        <script src="~/css/plugins/timepicker/bootstrap-material-datetimepicker.js"></script>
+        <script src="~/css/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+        <script src="~/css/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js"></script>
+        @* <script src="~/lib/pages/jquery.forms-advanced.js"></script> *@
+
+        <!-- XEditable Plugin -->
+        @* <script src="~/css/plugins/x-editable/js/bootstrap-editable.min.js"></script>*@
+        @* <script src="~/lib/pages/jquery.form-xeditable.init.js"></script>      *@
+
+        <!-- App js -->
+        <script src="~/lib/js/app.js"></script>
+        <script src="~/css/plugins/select2/select2.min.js"></script>
+        @* <script src="~/lib/pages/jquery.forms-advanced.js"></script>*@
+        <script src="~/css/plugins/daterangepicker/daterangepicker.js"></script>
+        <script src="~/css/plugins/dropify/js/dropify.min.js"></script>
+        <script src="~/lib/pages/jquery.form-upload.init.js"></script>
+
+
+        <!-- Required datatable js -->
+        <script src="~/css/plugins/datatables/jquery.datatables.min.js"></script>
+        <script src="~/css/plugins/datatables/datatables.bootstrap5.min.js"></script>
+
+        <!-- Buttons examples -->
+        <script src="~/css/plugins/datatables/datatables.buttons.min.js"></script>
+        <script src="~/css/plugins/datatables/datatables.bootstrap5.min.js"></script>
+        <script src="~/css/plugins/datatables/jszip.min.js"></script>
+        <script src="~/css/plugins/datatables/pdfmake.min.js"></script>
+        <script src="~/css/plugins/datatables/vfs_fonts.js"></script>
+        <script src="~/css/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="~/css/plugins/datatables/buttons.print.min.js"></script>
+        <script src="~/css/plugins/datatables/buttons.colvis.min.js"></script>
+
+        <!--common js-->
+        <script src="~/js/Site.js" asp-append-version="true"></script>
+
+        <!-- Responsive examples -->
+        <script src="~/css/plugins/datatables/datatables.responsive.min.js"></script>
+        @*<script src="~/css/plugins/datatables/responsive.bootstrap4.min.css"></script>*@
+        <script src="~/lib/pages/jquery.datatable.init.js"></script>
+        <script src="~/lib/pages/jquery.sales_dashboard.init.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+        <script src="~/assetsJs/form-select-custom.js" asp-append-version="true"></script>
+        <script src="~/assetsJs/multi-select/js/jquery.multi-select.js" asp-append-version="true"></script>
+        <script src="~/assetsJs/form-select-custom.js" asp-append-version="true"></script>
+
+
+        <script src="~/js/admin.pagination.js" asp-append-version="true"></script>
+        <script src="~/js/Post.js" asp-append-version="true"></script>
+
+        @await RenderSectionAsync("Scripts", required: false)
+ 
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+
+        <script>
+            feather.replace();
+
+        </script>
+
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
+
+    </div>
+   
+</body>
+</html>

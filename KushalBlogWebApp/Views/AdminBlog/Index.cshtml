@@ -1,0 +1,90 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h4 class="card-title">List of Posts</h4>
+                        </div>
+                        <!--end col-->
+                        <div class="col-auto">
+                            <div class="add-btn">
+                                <a style="cursor:pointer" onclick="ShowPopUp('@Url.Action("SavePost","AdminBlog")','Add New Post')" class="btn btn-primary btn-shadow-2 btn-sm text-light">
+                                    <i class="fa fa-solid fa-plus"></i>Add Post
+                                   
+                                </a>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end card-header-->
+                <div class="card-body">
+                    <partial name="_PaginationHeader" />
+                    <div id="AccountTableWrapper" class="table-responsive">
+                        @* <partial name="_AccountIndex" model="@Model" /> *@
+                    </div>
+                </div>
+                <!--end card-body-->
+            </div>
+            <!--end card-->
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+
+
+</div><!-- container -->
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Initialize pagination settings object
+            Pagination.init({
+                ajax: true,
+                method: 'GET',
+                browserPath: '@Context.Request.Path',
+                fetchUrl: '@Url.Action("Index", "AmountType")',
+                selector: '#AccountTableWrapper'
+            });
+
+            // attach 'before' event handler to 'Pagination' object to get all field parameters for pagination
+            $(Pagination).on('before', function (e) {
+                e.preventDefault();
+                { debugger }
+                var usersFilterFormValues = $('#Formamounttypefilter').serializeArray();
+                $.each(usersFilterFormValues, function (i, obj) {
+                    e.payload.paramsBuilder.addParameter(obj['name'], obj['value']);
+                });
+
+                e.payload.paramsBuilder.addParameters(getPaginationFieldParams());
+            });
+
+            addUsersPageHandlers();
+            addPaginationHandlers();
+
+            function addUsersPageHandlers() {
+
+                /* Custom Handlers */
+                $('#Formamounttypefilter').on('submit', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                })
+
+                $('#btnamounttypefilter').on('click', function (e) {
+                    e.preventDefault();
+                    Pagination.getData();
+                    return false;
+                });
+            }
+        });
+    </script>
+}

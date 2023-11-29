@@ -1,0 +1,12 @@
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\bin\Debug\net6.0\KushalBlogWebApp.Data.deps.json
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\bin\Debug\net6.0\KushalBlogWebApp.Data.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\bin\Debug\net6.0\KushalBlogWebApp.Data.pdb
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.csproj.AssemblyReference.cache
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.AssemblyInfoInputs.cache
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.AssemblyInfo.cs
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.csproj.CoreCompileInputs.cache
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\refint\KushalBlogWebApp.Data.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.pdb
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\ref\KushalBlogWebApp.Data.dll

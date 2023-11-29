@@ -1,0 +1,124 @@
+﻿/*.loader-animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.8);
+    z-index: 1000001;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+}
+
+    .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 16% auto;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+.display-none {
+    display: none !important;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}*/
+
+.loader-animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.8);
+    z-index: 1000001;
+    opacity: 1;
+    transition: all 0.5s;
+}
+.display-none {
+    display: none !important;
+}
+.lds-dual-ring {
+    display: inline-block;
+}
+
+    .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 16% auto;
+        border-radius: 50%;
+        border: 6px dotted #fff;
+        border-color: red yellow green hsla(30, 30%, 20%, .8);
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.col.border-right {
+    border-right: 2px solid #dfdfdf;
+}
+.col.border-right-dark {
+    border-right: 2px solid #605858;
+}
+.__table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+}
+
+    .__table tr td {
+        padding: 5px;
+        font-weight: 800;
+    }
+
+    .__table tr.parent td {
+        cursor: pointer;
+    }
+
+    .__table tr.child td {
+        color: #24695C;
+        font-weight: 400;
+    }
+
+    .__table tr.child.hidden {
+        display: none;
+    }
+
+._table tr .dis_order input {
+    border: 0;
+    width: 50px;
+    background: none;
+    text-align: center;
+    color: #24695C !important;
+}
+
+.__table tr.child {
+    background-color: rgba(4, 169, 245, 0.03) !important;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 2%) !important;
+}
+
