@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using KushalBlogWebApp.Data.IServices;
 using System.Security.Claims;
+using KushalBlogWebApp.Data.Common.Paging;
 
 namespace KushalBlogWebApp.Data.Services
 {
@@ -22,7 +23,7 @@ namespace KushalBlogWebApp.Data.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<BlogModel>> GetAllDataAdminBlog()
+        public async Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog()
         {
             try
             {
@@ -32,10 +33,14 @@ namespace KushalBlogWebApp.Data.Services
                 {
                     var param = new DynamicParameters();
                     await db.OpenAsync();
-                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlog]", commandType: CommandType.StoredProcedure);
-                    var blogList = await datas.ReadAsync<BlogModel>();
-                    var mappeddata = _mapper.Map<IEnumerable<BlogModel>>(blogList);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlogAdminPanel]", commandType: CommandType.StoredProcedure);
+
+                    var blogLost = await datas.ReadAsync<AdminBlogModel>();
+                    var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
+                    var mappeddata = _mapper.Map<PagedResponse<AdminBlogModel>>(pagedInfo);
+                    mappeddata.Items = blogLost;
                     return mappeddata;
+
                 }
             }
             catch (Exception)

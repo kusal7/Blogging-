@@ -14,4 +14,11 @@ namespace KushalBlogWebApp.Data.Model
         public bool PinnedStatus { get; set; }
         
     }
+    public class AdminBlogModel
+    {
+        public int Id { get; set; }
+        public string BlogHeader { get; set; }
+        public string BlogBody { get; set; }
+        public bool PinnedStatus { get; set; }
+    }
 }

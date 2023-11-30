@@ -1,8 +1,8 @@
-﻿@using KushalBlogWebApp.Models.Pagination;
-@* @using TeamEleven.Data.Common.Paging
-@using TeamEleven.Models.Pagination
-@using TeamEleven.Data.DTO.LeagueName
-@model PagedResponse<LeagueNameList> *@
+﻿@using KushalBlogWebApp.Data.Common.Paging
+@using KushalBlogWebApp.Models.Pagination
+@using KushalBlogWebApp.Data.Model
+@model PagedResponse<BlogModel>
+
 @{
     int Sn = 1;
 }
@@ -10,12 +10,7 @@
     <thead>
         <tr>
             <th>S.No</th>
-            <th>League Name</th>
-            <th>Game Type Name</th>
-            <th>Format Name</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Image</th>
+            <th>Amount Type Name</th>
             <th>Status</th>
             <th>Action</th>
 
@@ -24,19 +19,33 @@
 
 
     <tbody>
-      @*   @if (Model.Items.Count() <= 0)
 
+        @foreach (var item in Model.Items)
         {
-
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="color: red">
-                    No Results Found!
+                <td>@Sn</td>
+                <td>@item.BlogHeader</td>
+                <td>@item.BlogBody</td>
+
+           
+
+                <td name="buttons">
+                    <div class=" float-center">
+
+
+
+                       
+
+                            <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Amount Type" onclick="ShowPopUp('@Url.Action("AmountEdit", "AmountType", new { Id = item.Id })', 'Update Amount Type')"><i class="dripicons-pencil"></i></button>
+                    
+                  
+                            <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Amount Type" onclick="ShowPopUp('@Url.Action("AmountDelete", "AmountType", new { Id = item.Id })', 'Delete Amount Type','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
+
+                    </div>
                 </td>
             </tr>
-        } *@
+            Sn = Sn + 1;
+        }
 
     </tbody>
 </table>

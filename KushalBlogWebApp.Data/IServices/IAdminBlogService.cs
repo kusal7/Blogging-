@@ -1,4 +1,5 @@
-﻿using KushalBlogWebApp.Data.Model;
+﻿using KushalBlogWebApp.Data.Common.Paging;
+using KushalBlogWebApp.Data.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace KushalBlogWebApp.Data.IServices
 {
     public interface IAdminBlogService
     {
-        public Task<IEnumerable<BlogModel>> GetAllDataAdminBlog();
+        public Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog();
         public Task<SpResponseMessage> SavePost(AdminBlogModelVm adminBlogModelVm);
     }
 }
