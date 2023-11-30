@@ -1,10 +1,9 @@
-﻿@{
+﻿@using KushalBlogWebApp.Data.Model
+
+@{
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -29,9 +28,9 @@
                 </div>
                 <!--end card-header-->
                 <div class="card-body">
-                    <partial name="_PaginationHeader" />
-                    <div id="AccountTableWrapper" class="table-responsive">
-                        @* <partial name="_AccountIndex" model="@Model" /> *@
+            
+                   <div id="AdminBlogIndex" class="table-responsive">
+                         @* <partial name="_AdminBlogIndex"  />  *@
                     </div>
                 </div>
                 <!--end card-body-->
@@ -52,8 +51,8 @@
                 ajax: true,
                 method: 'GET',
                 browserPath: '@Context.Request.Path',
-                fetchUrl: '@Url.Action("Index", "AmountType")',
-                selector: '#AccountTableWrapper'
+                fetchUrl: '@Url.Action("Index", "AdminBlog")',
+                selector: '#AdminBlogIndex'
             });
 
             // attach 'before' event handler to 'Pagination' object to get all field parameters for pagination
@@ -71,20 +70,6 @@
             addUsersPageHandlers();
             addPaginationHandlers();
 
-            function addUsersPageHandlers() {
-
-                /* Custom Handlers */
-                $('#Formamounttypefilter').on('submit', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                })
-
-                $('#btnamounttypefilter').on('click', function (e) {
-                    e.preventDefault();
-                    Pagination.getData();
-                    return false;
-                });
-            }
         });
     </script>
 }

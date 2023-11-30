@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KushalBlogWebApp.Data.Model
 {
-    public class BlogModel : BaseClass
+    public class BlogModel 
     {
         public int Id { get; set; }
         public string BlogHeader { get; set; }
