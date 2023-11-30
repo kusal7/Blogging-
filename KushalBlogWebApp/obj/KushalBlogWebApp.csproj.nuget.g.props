@@ -12,8 +12,54 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\gaurab.shrestha\.nuget\packages\" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)select.pdf\23.1.0\contentFiles\any\any\Select.Html.dep" Condition="Exists('$(NuGetPackageRoot)select.pdf\23.1.0\contentFiles\any\any\Select.Html.dep')">
+      <NuGetPackageId>Select.Pdf</NuGetPackageId>
+      <NuGetPackageVersion>23.1.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Select.Html.dep</TargetPath>
+      <Private>True</Private>
+      <Link>Select.Html.dep</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)select.pdf\23.1.0\contentFiles\any\any\Select.Tools.dep" Condition="Exists('$(NuGetPackageRoot)select.pdf\23.1.0\contentFiles\any\any\Select.Tools.dep')">
+      <NuGetPackageId>Select.Pdf</NuGetPackageId>
+      <NuGetPackageVersion>23.1.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Select.Tools.dep</TargetPath>
+      <Private>True</Private>
+      <Link>Select.Tools.dep</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)select.htmltopdf.netcore\23.1.0\contentFiles\any\any\Select.Html.dep" Condition="Exists('$(NuGetPackageRoot)select.htmltopdf.netcore\23.1.0\contentFiles\any\any\Select.Html.dep')">
+      <NuGetPackageId>Select.HtmlToPdf.NetCore</NuGetPackageId>
+      <NuGetPackageVersion>23.1.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Select.Html.dep</TargetPath>
+      <Private>True</Private>
+      <Link>Select.Html.dep</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)select.htmltopdf\23.1.0\contentFiles\any\any\Select.Html.dep" Condition="Exists('$(NuGetPackageRoot)select.htmltopdf\23.1.0\contentFiles\any\any\Select.Html.dep')">
+      <NuGetPackageId>Select.HtmlToPdf</NuGetPackageId>
+      <NuGetPackageVersion>23.1.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Select.Html.dep</TargetPath>
+      <Private>True</Private>
+      <Link>Select.Html.dep</Link>
+    </Content>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\gaurab.shrestha\.nuget\packages\jquery\1.9.0</PkgjQuery>
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\gaurab.shrestha\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\gaurab.shrestha\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

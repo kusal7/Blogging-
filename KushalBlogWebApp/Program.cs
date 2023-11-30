@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<IAdminBlogService, AdminBlogService>();
 
 
 var serviceProvider = Serviceprovider(builder.Services);

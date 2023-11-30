@@ -1,5 +1,8 @@
-﻿
+﻿@using KushalBlogWebApp.Data.Model
+@model AdminBlogModelVm
+
 <form id="formAmountSave" class="form-horizontal auth-form" method="post" autocomplete="off">
+
     <ul>
         @if (ViewBag.Error is not null)
         {
@@ -11,20 +14,25 @@
     </ul>
     <div class="row">
         <div class="form-group mb-2">
-            <label class="form-label" for="userpassword">Amount Type Name</label>
+            <label class="form-label" for="blogHeader">Blog Header</label>
             <div class="input-group">
-                <input asp-for="AmountTypeName" type="text" class="form-control" placeholder="Eg.Winning">
+                <input asp-for="BlogHeader" type="text" class="form-control" placeholder="Header" id="blogHeader">
             </div>
-            <span class="text-danger" asp-validation-for="AmountTypeName"></span>
+            <span class="text-danger" asp-validation-for="BlogHeader"></span>
         </div>
-
-
-
         <div class="form-group mb-2">
-            <label class="form-label" for="userpassword">Is Active</label>
-            <div class="form-check form-switch">
-                <input asp-for="IsActive" type="checkbox" class="form-check-input">
+            <label class="form-label" for="blogBody">Blog Body</label>
+            <div class="input-group">
+                <input asp-for="BlogBody" type="text" class="form-control" placeholder="Blog Body" id="blogBody">
             </div>
+            <span class="text-danger" asp-validation-for="BlogBody"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label class="form-label" for="writtenBy">Written By</label>
+            <div class="input-group">
+                <input asp-for="CreatedBy" type="text" class="form-control" placeholder="Blog Body" id="writtenBy">
+            </div>
+            <span class="text-danger" asp-validation-for="CreatedBy"></span>
         </div>
     </div>
 
@@ -39,7 +47,7 @@
 
     FormHandler.init({
         method: 'POST',
-        actionUrl: '@Url.Action("AmountSave", "AmountType")',
+        actionUrl: '@Url.Action("SavePost", "AdminBlog")',
         containerSelector: '#add-new .modal-body',
         selector: '#formAmountSave'
     }, function () {

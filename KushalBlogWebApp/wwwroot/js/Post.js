@@ -43,13 +43,13 @@ var FormHandler = {
                 processData: false,
                 success: function (res) {
                    
-                    debugger;
+              
                     if (successCallback && typeof successCallback === 'function') {
                         successCallback();
                     }
                 },
                 beforeSend: function () {
-                    debugger;
+              
                     $('button[type="submit"]').prop("disabled", true);
                     setLoadWaiting(1)
 

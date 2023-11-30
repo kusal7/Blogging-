@@ -125,6 +125,26 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.TagHelpers": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Select.HtmlToPdf": {
+              "target": "Package",
+              "version": "[23.1.0, )"
+            },
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[23.1.0, )"
+            },
+            "Select.Pdf": {
+              "target": "Package",
+              "version": "[23.1.0, )"
+            },
             "Twitter.Bootstrap": {
               "target": "Package",
               "version": "[3.0.1.1, )"

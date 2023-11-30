@@ -1,5 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using KushalBlogWebApp.Models.Pagination;
+@* @using TeamEleven.Data.Common.Paging
+@using TeamEleven.Models.Pagination
+@using TeamEleven.Data.DTO.LeagueName
+@model PagedResponse<LeagueNameList> *@
 @{
+    int Sn = 1;
 }
+<table id="datatable-buttons12" class="table table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>League Name</th>
+            <th>Game Type Name</th>
+            <th>Format Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+      @*   @if (Model.Items.Count() <= 0)
+
+        {
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="color: red">
+                    No Results Found!
+                </td>
+            </tr>
+        } *@
+
+    </tbody>
+</table>
+<partial name="_PaginationFooter"
+         model="new PaginationFooter(Model.PageNumber, Model.PageSize, Model.Items.Count(), Model.FilteredCount, Model.TotalCount, Model.TotalPages)" />
