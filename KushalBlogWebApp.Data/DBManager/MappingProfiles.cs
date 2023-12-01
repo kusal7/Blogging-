@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-
+using KushalBlogWebApp.Data.Common.Paging;
 
 namespace TeamEleven.Data.Common
 {
@@ -13,8 +13,8 @@ namespace TeamEleven.Data.Common
         /// </summary>
         public MappingProfiles()
         {
-     
 
+            CreateMap(typeof(PagedInfo), typeof(PagedResponse<>)).ReverseMap();
         }
     }
 }

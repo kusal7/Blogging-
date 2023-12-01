@@ -1,3 +1,5 @@
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using AutoMapper;
 using DBManager;
 using KushalBlogWebApp.Data.IServices;
@@ -26,10 +28,15 @@ var mapperConfig = new MapperConfiguration(config =>
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
+builder.Services.AddNotyf(config =>
+{
+    config.DurationInSeconds = 5; config.IsDismissable = true; config.Position = NotyfPosition.TopRight;
+});
 
 
 
 var app = builder.Build();
+app.UseNotyf();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
