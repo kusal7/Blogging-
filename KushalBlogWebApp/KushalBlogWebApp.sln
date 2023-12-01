@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KushalBlogWebApp", "KushalBlogWebApp\KushalBlogWebApp.csproj", "{69D20AAF-40BC-4C79-A5A9-5D4952EAA897}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KushalBlogWebApp.Data", "KushalBlogWebApp.Data\KushalBlogWebApp.Data.csproj", "{3793D84D-84EB-416A-A409-5E98E09C3126}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KushalBlogWebApp.Data", "KushalBlogWebApp.Data\KushalBlogWebApp.Data.csproj", "{3793D84D-84EB-416A-A409-5E98E09C3126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
