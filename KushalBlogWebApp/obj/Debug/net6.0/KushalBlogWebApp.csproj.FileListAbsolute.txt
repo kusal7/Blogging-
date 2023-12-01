@@ -67,3 +67,6 @@ D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\Microsoft.CodeAn
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.MvcApplicationPartsAssemblyInfo.cs

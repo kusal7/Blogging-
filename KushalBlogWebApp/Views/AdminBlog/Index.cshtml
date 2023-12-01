@@ -1,5 +1,6 @@
-﻿@using KushalBlogWebApp.Data.Model
-
+﻿@using KushalBlogWebApp.Data.Common.Paging;
+@using KushalBlogWebApp.Data.Model
+@model PagedResponse<AdminBlogModel>
 @{
 
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,10 +17,10 @@
                         <!--end col-->
                         <div class="col-auto">
                             <div class="add-btn">
-                                <a style="cursor:pointer" onclick="ShowPopUp('@Url.Action("SavePost","AdminBlog")','Add New Post')" class="btn btn-primary btn-shadow-2 btn-sm text-light">
+                                 <a style="cursor:pointer" onclick="ShowPopUp('@Url.Action("SavePost","AdminBlog")','Add New Post')" class="btn btn-primary btn-shadow-2 btn-sm text-light">
                                     <i class="fa fa-solid fa-plus"></i>Add Post
                                    
-                                </a>
+                                </a> 
                             </div>
                         </div>
                         <!--end col-->

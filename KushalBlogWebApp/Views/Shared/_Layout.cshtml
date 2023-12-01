@@ -263,6 +263,7 @@
         <script src="~/js/Post.js" asp-append-version="true"></script>
 
         @await RenderSectionAsync("Scripts", required: false)
+        @await Component.InvokeAsync("Notyf")
  
         <script>
             $(document).ready(function () {

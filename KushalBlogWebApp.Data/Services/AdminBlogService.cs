@@ -37,6 +37,9 @@ namespace KushalBlogWebApp.Data.Services
 
                     var blogLost = await datas.ReadAsync<AdminBlogModel>();
                     var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
+                    var aaaa = pagedInfo.TotalPages;
+                    var aaaaa = pagedInfo.TotalCount;
+                    var aaaaaa = pagedInfo.Showingfrom;
                     var mappeddata = _mapper.Map<PagedResponse<AdminBlogModel>>(pagedInfo);
                     mappeddata.Items = blogLost;
                     return mappeddata;

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using KushalBlogWebApp.Common.Helper;
 using KushalBlogWebApp.Data.IServices;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace KushalBlogWebApp.Controllers
 {
@@ -10,9 +11,11 @@ namespace KushalBlogWebApp.Controllers
     {
 
         private readonly IAdminBlogService _adminblogservice;
-        public AdminBlogController(IAdminBlogService adminBlogService)
+        private readonly INotyfService _notyfService;
+        public AdminBlogController(IAdminBlogService adminBlogService,INotyfService notyfService )
         {
             _adminblogservice = adminBlogService;
+            _notyfService = notyfService;
         }
         #region Index Page
         public async Task<IActionResult> Index()
@@ -47,7 +50,7 @@ namespace KushalBlogWebApp.Controllers
                 var responseMessage = await _adminblogservice.SavePost(adminBlogModelVm);
                 if (responseMessage.ReturnId > 0)
                 {
-                  //  _notyfService.Success(responseMessage.Msg);
+                    _notyfService.Success(responseMessage.Msg);
                     return Ok();
                 }
                 else
