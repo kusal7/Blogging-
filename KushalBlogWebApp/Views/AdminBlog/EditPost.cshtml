@@ -1,0 +1,78 @@
+﻿@using KushalBlogWebApp.Data.Model
+@model AdminBlogModelVm
+
+<form id="formBlogEdit" class="form-horizontal auth-form" method="post" autocomplete="off">
+
+    <ul>
+        @if (ViewBag.Error is not null)
+        {
+            @foreach (var error in ViewBag.Error)
+            {
+                <li class="text-danger">@error</li>
+            }
+        }
+    </ul>
+    <div class="row">
+        <div class="form-group mb-2">
+            <label class="form-label" for="blogHeader">Blog Header</label>
+            <div class="input-group">
+                <input asp-for="BlogHeader" type="text" class="form-control" placeholder="Header" id="blogHeader">
+            </div>
+            <span class="text-danger" asp-validation-for="BlogHeader"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label class="form-label" for="blogBody">Blog Body</label>
+            <div class="input-group">
+                <input asp-for="BlogBody" type="text" class="form-control" placeholder="Blog Body" id="blogBody">
+            </div>
+            <span class="text-danger" asp-validation-for="BlogBody"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label class="form-label" for="createdBy">Written By</label>
+            <div class="input-group">
+                <input asp-for="CreatedBy" type="text" class="form-control" placeholder="Blog Body" id="createdBy">
+            </div>
+            <span class="text-danger" asp-validation-for="UpdatedBy"></span>
+        </div>
+        <div class="form-group mb-2">
+            <label class="form-label" for="updatedBy">Updated By</label>
+            <div class="input-group">
+                <input asp-for="UpdatedBy" type="text" class="form-control" placeholder="Blog Body" id="updatedBy">
+            </div>
+            <span class="text-danger" asp-validation-for="UpdatedBy"></span>
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-sm btn-primary">SaveChanges</button>
+    </div>
+</form><!--end form-->
+
+<script>
+
+    FormHandler.init({
+        method: 'POST',
+        actionUrl: '@Url.Action("EditPost", "AdminBlog")',
+        containerSelector: '#add-new .modal-body',
+        selector: '#formBlogEdit'
+    }, function () {
+        $("#add-new .modal-body").html("");
+        $("#add-new .modal-title").html("");
+        $("#add-new").modal('hide');
+        //new PNotify({
+        //    // title: 'Success ',
+        //    text: 'Loan Type Created Successfully',
+        //    type: 'success',
+        //    animation: {
+        //        effect_in: 'fade',
+        //        effect_out: 'slide'
+        //    }
+
+        //});
+        Pagination.getData();
+    });
+
+
+</script>

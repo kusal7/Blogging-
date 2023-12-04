@@ -1,7 +1,7 @@
 ﻿@using KushalBlogWebApp.Data.Model
 @model AdminBlogModelVm
 
-<form id="formAmountSave" class="form-horizontal auth-form" method="post" autocomplete="off">
+<form id="formBlogSave" class="form-horizontal auth-form" method="post" autocomplete="off">
 
     <ul>
         @if (ViewBag.Error is not null)
@@ -49,7 +49,7 @@
         method: 'POST',
         actionUrl: '@Url.Action("SavePost", "AdminBlog")',
         containerSelector: '#add-new .modal-body',
-        selector: '#formAmountSave'
+        selector: '#formBlogSave'
     }, function () {
         $("#add-new .modal-body").html("");
         $("#add-new .modal-title").html("");

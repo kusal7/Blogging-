@@ -70,3 +70,4 @@ D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\System.Security.
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.MvcApplicationPartsAssemblyInfo.cs
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\bin\Debug\net6.0\libman.json

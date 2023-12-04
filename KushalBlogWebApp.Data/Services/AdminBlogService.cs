@@ -37,9 +37,6 @@ namespace KushalBlogWebApp.Data.Services
 
                     var blogLost = await datas.ReadAsync<AdminBlogModel>();
                     var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
-                    var aaaa = pagedInfo.TotalPages;
-                    var aaaaa = pagedInfo.TotalCount;
-                    var aaaaaa = pagedInfo.Showingfrom;
                     var mappeddata = _mapper.Map<PagedResponse<AdminBlogModel>>(pagedInfo);
                     mappeddata.Items = blogLost;
                     return mappeddata;
@@ -52,7 +49,6 @@ namespace KushalBlogWebApp.Data.Services
                 throw;
             }
         }
-
         public async Task<SpResponseMessage> SavePost(AdminBlogModelVm adminBlogModelVm)
         {
             var p = adminBlogModelVm.PrepareDynamicParameters();
@@ -86,6 +82,59 @@ namespace KushalBlogWebApp.Data.Services
                 }
             }
             catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public async Task<AdminBlogModelVm> GetBlogPostById(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", Id);
+                    var data = await db.QuerySingleAsync<AdminBlogModelVm>(sql: "[dbo].[usp_GetBlogPostById]", param: param, commandType: CommandType.StoredProcedure);
+                    return data;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<SpResponseMessage> DeletePost(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var p = new DynamicParameters();
+                    await db.OpenAsync();
+                    p.Add("@Id", Id);
+          
+                    p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
+                    p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    var result = await db.ExecuteAsync("[Usp_Delete_AdminBlog]", param: p, commandType: CommandType.StoredProcedure);
+                    var spresponsemessage = new SpResponseMessage
+                    {
+                        ReturnId = p.Get<int>("@Return_Id"),
+                        Msg = p.Get<string>("@Msg"),
+                        StatusCode = p.Get<int>("@StatusCode"),
+                        MsgType = p.Get<string>("@MsgType")
+                    };
+                    return spresponsemessage;
+                }
+            }
+            catch (Exception)
             {
 
                 throw;
