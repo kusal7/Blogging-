@@ -84,7 +84,7 @@ namespace KushalBlogWebApp.Data.Services
                 Id = adminBlogModelVm.Id,
                 BlogBody = adminBlogModelVm.BlogBody,
                 BlogHeader = adminBlogModelVm.BlogHeader,
-                ImageUrl = imagePath,
+                ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
                 CreatedBy = adminBlogModelVm.CreatedBy,
                 UpdatedBy = adminBlogModelVm.UpdatedBy,
 

@@ -3,6 +3,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using KushalBlogWebApp.Data.Model
+
+@{
+    var data = ViewBag.LatestPost as BlogModel;
+    var allBlogData = ViewBag.AllBlogList as IEnumerable<BlogModel>;
+    var pageSize = 4; // Set your desired page size
+    var currentPage = ViewBag.CurrentPage as int? ?? 1; // Default to page 1 if ViewBag.CurrentPage is not set
+    var totalPageCount = Math.Ceiling((double)ViewBag.TotalCount / pageSize);
+
+}
+
+
+@* <div class="container">
+    <div class="row">
+        <h2>
+            Latest Articles
+        </h2>
+    </div>
+</div>
+
+<div class="container text-center mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card p-4 shadow text-center">
+                <div class="mx-auto" style="max-width: 80%;">
+                    <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">
+                </div>
+                <div class="card-body">
+                    <h3 class="mb-4">@data.BlogHeader</h3>
+                    <p class="card-text">@data.BlogBody</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                @foreach (var blogData in allBlogData)
+                {
+                    <div class="col-md-6">
+                        <div class="card p-4 shadow" style="width: 100%;">
+                            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                            <div class="card-body">
+                                <h5 class="mb-4">@blogData.BlogHeader</h5>
+                                <p class="card-text">@blogData.BlogBody</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                <div class="card-body">
+                    <h5 class="mb-4">Gaurab Shrestha</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        @for (int i = 1; i <= Math.Ceiling((double)allBlogData.Count() / pageSize); i++)
+                        {
+                            <li class="page-item @(i == currentPage ? "active" : "")">
+                                <a class="page-link" href="?page=@i">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div> *@
 <div class="container">
     <div class="row">
         <h2>
@@ -11,63 +85,66 @@
     </div>
 </div>
 
-    <div class="container text-center mt-4">
-   
-        <div class="row">
-
-            <div class="col-8">
-
-                <!-- Add the shadow class to the card -->
-                <div class="card p-4 shadow">
-                    <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid">
-                    <div class="card-body">
-                        <!-- Add spacing classes to push content inside -->
-                        <h3 class="mb-4">
-                            Is it Ethical to Travel Now? With that Freedom Comes Responsibility.
-                        </h3>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
+<div class="container text-center mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card p-4 shadow text-center">
+                <div class="mx-auto" style="max-width: 80%;">
+                    <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">
                 </div>
-                <div class="row mt-4">
-                    <div class="col-6 mx-auto">
-                        <div class="card p-4 shadow" style="width: 18rem;">
-                            <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid">
+                <div class="card-body">
+                    <h3 class="mb-4">@data.BlogHeader</h3>
+                    <p class="card-text">@data.BlogBody</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                @foreach (var blogData in allBlogData)
+                {
+                    <div class="col-md-6">
+                        <div class="card p-4 shadow" style="width: 100%;">
+                            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
                             <div class="card-body">
-                                <h5 class="mb-4">
-                                    Gaurab Shrestha
-                                </h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="mb-4">@blogData.BlogHeader</h5>
+                                <p class="card-text">@blogData.BlogBody</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 mx-auto">
-                        <div class="card p-4 shadow" style="width: 18rem;">
-                            <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid">
-                            <div class="card-body">
-                                <h5 class="mb-4">
-                                    Gaurab Shrestha
-                                </h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
+                }
+            </div>
+        </div>
+        <!-- Pagination -->
+        @if (Math.Ceiling((double)allBlogData.Count() / pageSize) > 1)
+        {
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            @for (int i = 1; i <= Math.Ceiling((double)allBlogData.Count() / pageSize); i++)
+                            {
+                                <li class="page-item @(i == currentPage ? "active" : "")">
+                                    <a class="page-link" href="?page=@i">@i</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card p-4 shadow">
-                    <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid">
-                    <div class="card-body">
-                        <!-- Add spacing classes to push content inside -->
-                        <h5 class="mb-4">
-                            Gaurab Shrestha
-                        </h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+        }
 
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                <div class="card-body">
+                    <h5 class="mb-4">Gaurab Shrestha</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+
+</div>
+
 
 
 

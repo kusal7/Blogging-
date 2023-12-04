@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RBndjoGKw2OpQR1kPpJubUEa2eIrFDe7+Nmq8REmvsY=",
+  "Hash": "uLG3n7pq8esAq+OG3Ap9zyJfJGTjbXC5bEd5H30d+NM=",
   "Source": "KushalBlogWebApp",
   "BasePath": "_content/KushalBlogWebApp",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\Annotation 2023-10-12 161815_2023_12_04_14_38_47_4120.png"
     },
     {
-      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_04_14_45_46_3603.jpg",
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg",
       "SourceId": "KushalBlogWebApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
       "BasePath": "_content/KushalBlogWebApp",
-      "RelativePath": "BlogImages/WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_04_14_45_46_3603.jpg",
+      "RelativePath": "BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_04_14_45_46_3603.jpg"
+      "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_16_37_52_6161.jpg",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_16_37_52_6161.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_16_37_52_6161.jpg"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_16_38_44_8332.jpg",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_16_38_44_8332.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_16_38_44_8332.jpg"
     },
     {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\css\\assetsCss\\app.min.css",

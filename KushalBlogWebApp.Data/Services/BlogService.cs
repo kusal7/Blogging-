@@ -21,17 +21,20 @@ namespace KushalBlogWebApp.Data.Services
         {
             _map = map;
         }
-        public async Task<IEnumerable<BlogModel>> GetAllData( )
+        public async Task<IEnumerable<BlogModel>> GetAllData(int pageSize, int currentPage)
         {
             try
             {
+               
                
                 var dbfactory = DbFactoryProvider.GetFactory();
                 using (var db = (DbConnection)dbfactory.GetConnection())
                 {
                     var param = new DynamicParameters();
                     await db.OpenAsync();
-                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlog]", commandType: CommandType.StoredProcedure);
+                    param.Add("@PageSize", pageSize);
+                    param.Add("@PageNumber", currentPage);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlog]",param:param, commandType: CommandType.StoredProcedure);
                     var blogList = await datas.ReadAsync<BlogModel>();
                     var mappeddata = _map.Map<IEnumerable<BlogModel>>(blogList);
                     return mappeddata;
@@ -65,5 +68,7 @@ namespace KushalBlogWebApp.Data.Services
                 throw;
             }
         }
+
+      
     }
 }
