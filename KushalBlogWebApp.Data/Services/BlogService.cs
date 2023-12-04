@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using DBManager;
+using System.Text.RegularExpressions;
 
 namespace KushalBlogWebApp.Data.Services
 {
@@ -34,6 +35,28 @@ namespace KushalBlogWebApp.Data.Services
                     var blogList = await datas.ReadAsync<BlogModel>();
                     var mappeddata = _map.Map<IEnumerable<BlogModel>>(blogList);
                     return mappeddata;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<BlogModel> GetLatestPost()
+        {
+            try
+            {
+
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    
+                    await db.OpenAsync();
+                    var datas = await db.QuerySingleAsync<BlogModel>(sql: "[dbo].[usp_GetLatestBlog]",  commandType: CommandType.StoredProcedure);
+                    return datas;
                 }
             }
             catch (Exception)

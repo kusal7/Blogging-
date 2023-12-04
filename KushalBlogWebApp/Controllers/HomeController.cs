@@ -12,7 +12,10 @@ namespace KushalBlogWebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var blogList = await _blogService.GetAllData();
+
+            ViewBag.LatestPost = await _blogService.GetLatestPost();
+
+        //    var blogList = await _blogService.GetAllData();
             return View();
         }
     }

@@ -12,15 +12,23 @@ using AutoMapper;
 using KushalBlogWebApp.Data.IServices;
 using System.Security.Claims;
 using KushalBlogWebApp.Data.Common.Paging;
+using System.Reflection;
+using Microsoft.AspNetCore.Hosting;
+using KushalBlogWebApp.Data.Common;
+using Microsoft.Extensions.Configuration;
 
 namespace KushalBlogWebApp.Data.Services
 {
     public class AdminBlogService : IAdminBlogService
     {
         private readonly IMapper _mapper;
-        public AdminBlogService(IMapper mapper)
+        private readonly IConfiguration _config;
+        private readonly IHostingEnvironment _environment;
+        public AdminBlogService(IMapper mapper, IHostingEnvironment hostingEnvironment, IConfiguration configuration)
         {
             _mapper = mapper;
+            _environment = hostingEnvironment;
+            _config = configuration;
         }
 
         public async Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog()
@@ -51,7 +59,38 @@ namespace KushalBlogWebApp.Data.Services
         }
         public async Task<SpResponseMessage> SavePost(AdminBlogModelVm adminBlogModelVm)
         {
-            var p = adminBlogModelVm.PrepareDynamicParameters();
+            string imagePath = "";
+            string existingImage = string.Empty;
+            if (adminBlogModelVm.Id > 0)
+            {
+                var result = await GetBlogPostById(adminBlogModelVm.Id);
+                existingImage = result.ImageUrl;
+            }
+            if (adminBlogModelVm.ImageFile != null)
+            {
+                if (!string.IsNullOrEmpty(existingImage) && existingImage != " ")
+                {
+                    string imgPath = existingImage.Substring(1);
+                    string existingImages = Path.Combine("" + _environment.WebRootPath, imgPath);
+                    System.IO.File.Delete(existingImages);
+                }
+
+                var folderPath = _config["Folder:BlogImage"];
+                imagePath = await FileUploadHandler.UploadFile(_environment, folderPath, adminBlogModelVm.ImageFile);
+            }
+
+            var blogModel = new AdminBlogSaveVm()
+            {
+                Id = adminBlogModelVm.Id,
+                BlogBody = adminBlogModelVm.BlogBody,
+                BlogHeader = adminBlogModelVm.BlogHeader,
+                ImageUrl = imagePath,
+                CreatedBy = adminBlogModelVm.CreatedBy,
+                UpdatedBy = adminBlogModelVm.UpdatedBy,
+
+            };
+
+            var p = blogModel.PrepareDynamicParameters();
             if (adminBlogModelVm.Id > 0)
             {
                 p.AddMore("Event", "U");

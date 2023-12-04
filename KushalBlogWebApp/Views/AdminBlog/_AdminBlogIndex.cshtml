@@ -13,6 +13,7 @@
             <th>Blog Header</th>
             <th>Blog Body</th>
             <th>Written By</th>
+            <th>Image</th>
             <th>Created Date</th>
             <th>Updated By</th>
             <th>Updated Date</th>
@@ -30,6 +31,9 @@
                 <td>@item.BlogHeader</td>
                 <td>@item.BlogBody</td>
                 <td>@item.CreatedBy</td>
+                <td>
+                    <img src="@item.ImageUrl" alt="" class="rounded thumb-lg me-1 open-image" style="width: 50px; height: 50px;">
+                </td>
                 <td>@item.CreatedDate</td>
                 <td>@item.UpdatedBy</td>
                 <td>

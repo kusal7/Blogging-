@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,19 @@ namespace KushalBlogWebApp.Data.Model
         public int Id { get; set; }
         public string BlogHeader { get; set; } = string.Empty;
         public string BlogBody { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = String.Empty;
+        public IFormFile? ImageFile { get; set; }
       
 
+    }
+
+    public class AdminBlogSaveVm : BaseClass
+    {
+        public int Id { get; set; }
+        public string BlogHeader { get; set; } = string.Empty;
+        public string BlogBody { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = String.Empty;
+        
     }
 
     public class AdminBlogModel
@@ -25,6 +37,7 @@ namespace KushalBlogWebApp.Data.Model
         public DateTime CreatedDate { get; set; }
         public string UpdatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
+        public string ImageUrl { get; set; }
     }
 
     public class AdminBlogGetById

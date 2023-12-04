@@ -132,4 +132,8 @@
     <ProjectReference Include="..\KushalBlogWebApp.Data\KushalBlogWebApp.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\BlogImages\" />
+  </ItemGroup>
+
 </Project>
