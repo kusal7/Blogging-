@@ -21,7 +21,7 @@ namespace KushalBlogWebApp.Data.Services
         {
             _map = map;
         }
-        public async Task<IEnumerable<BlogModel>> GetAllData(int pageSize, int currentPage)
+        public async Task<IEnumerable<BlogModel>> GetAllData()
         {
             try
             {
@@ -32,8 +32,6 @@ namespace KushalBlogWebApp.Data.Services
                 {
                     var param = new DynamicParameters();
                     await db.OpenAsync();
-                    param.Add("@PageSize", pageSize);
-                    param.Add("@PageNumber", currentPage);
                     var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlog]",param:param, commandType: CommandType.StoredProcedure);
                     var blogList = await datas.ReadAsync<BlogModel>();
                     var mappeddata = _map.Map<IEnumerable<BlogModel>>(blogList);
@@ -69,6 +67,50 @@ namespace KushalBlogWebApp.Data.Services
             }
         }
 
-      
+        public async Task<SingleBlogModel> GetSingleBlogDetails(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", Id);
+                    var data = await db.QuerySingleAsync<SingleBlogModel>(sql: "[dbo].[USP_GetSingleBlogDetailsById]", param: param, commandType: CommandType.StoredProcedure);
+                    return data;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<BlogModel>> GetAllPinnedBlogList()
+        {
+            try
+            {
+
+
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllPinnedBlogPost]", param: param, commandType: CommandType.StoredProcedure);
+                    var blogList = await datas.ReadAsync<BlogModel>();
+                    var mappeddata = _map.Map<IEnumerable<BlogModel>>(blogList);
+                    return mappeddata;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

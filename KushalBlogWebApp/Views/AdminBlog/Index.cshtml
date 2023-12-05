@@ -72,5 +72,30 @@
             addPaginationHandlers();
 
         });
+
+        function changeStatus(Id, PinnedStatus) {
+            debugger;
+            $.ajax({
+                url: '@Url.Action("UpdatePinnedStatus", "AdminBlog")',
+                type: 'POST',
+                data: {
+                    Id: Id,
+                    PinnedStatus: PinnedStatus
+                },
+                success: function (result) {
+                    // Handle the success response
+                    // Example: Display a success message or perform additional actions
+
+                    Pagination.getData();
+                },
+                error: function (xhr, status, error) {
+                    // Handle the error response
+                    // Example: Display an error message or perform error handling
+                    alert('Error: ' + error);
+                }
+            });
+
+
+        }
     </script>
 }

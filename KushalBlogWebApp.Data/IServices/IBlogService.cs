@@ -9,8 +9,10 @@ namespace KushalBlogWebApp.Data.IServices
 {
     public interface IBlogService
     {
-        public Task<IEnumerable<BlogModel>> GetAllData(int pageSize, int currentPage);
-
+        public Task<IEnumerable<BlogModel>> GetAllData();
         public Task<BlogModel> GetLatestPost();
+        public Task<SingleBlogModel> GetSingleBlogDetails(int Id);
+        public Task<IEnumerable<BlogModel>> GetAllPinnedBlogList();
+
     }
 }

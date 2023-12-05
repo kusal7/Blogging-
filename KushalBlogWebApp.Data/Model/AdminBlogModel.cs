@@ -14,6 +14,7 @@ namespace KushalBlogWebApp.Data.Model
         public string BlogBody { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = String.Empty;
         public IFormFile? ImageFile { get; set; }
+        public bool PinnedStatus { get; set; }
       
 
     }
@@ -24,7 +25,8 @@ namespace KushalBlogWebApp.Data.Model
         public string BlogHeader { get; set; } = string.Empty;
         public string BlogBody { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = String.Empty;
-        
+
+        public bool PinnedStatus { get; set; }
     }
 
     public class AdminBlogModel

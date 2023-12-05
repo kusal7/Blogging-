@@ -17,6 +17,7 @@
             <th>Created Date</th>
             <th>Updated By</th>
             <th>Updated Date</th>
+            <th>Pinned Status</th>
 
         </tr>
     </thead>
@@ -41,6 +42,21 @@
                     {
                         @item.UpdatedDate
                     }
+                </td>
+                <td>
+                
+                    @if (item.PinnedStatus == true)
+                    {
+                        <div class="form-check form-switch">
+                            <input asp-for="@item.PinnedStatus" class="form-check-input bg-success" type="checkbox" id="" onchange="changeStatus(@item.Id, this.checked)">
+                        </div>
+                    }else
+                    {
+                        <div class="form-check form-switch">
+                            <input asp-for="@item.PinnedStatus" class="form-check-input bg-danger" type="checkbox" id="" onchange="changeStatus(@item.Id, this.checked)">
+                        </div>
+                    }
+
                 </td>
 
                 <td name="buttons">

@@ -87,6 +87,7 @@ namespace KushalBlogWebApp.Data.Services
                 ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
                 CreatedBy = adminBlogModelVm.CreatedBy,
                 UpdatedBy = adminBlogModelVm.UpdatedBy,
+                PinnedStatus = adminBlogModelVm.PinnedStatus
 
             };
 
@@ -172,6 +173,40 @@ namespace KushalBlogWebApp.Data.Services
                     };
                     return spresponsemessage;
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<SpResponseMessage> UpdatePinnedStatus(AdminBlogModelVm adminBlogModelVm)
+        {
+
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", adminBlogModelVm.Id);
+                    param.Add("@PinnedStatus", adminBlogModelVm.PinnedStatus);
+                    param.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    param.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
+                    param.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    param.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    var result = await db.ExecuteAsync("[dbo].[USP_UpdatePinnedStatus]", param: param, commandType: CommandType.StoredProcedure);
+                    var spresponsemessage = new SpResponseMessage
+                    {
+                        ReturnId = param.Get<int>("@Return_Id"),
+                        Msg = param.Get<string>("@Msg"),
+                        StatusCode = param.Get<int>("@StatusCode"),
+                        MsgType = param.Get<string>("@MsgType")
+                    };
+                    return spresponsemessage;
+                }
+
             }
             catch (Exception)
             {

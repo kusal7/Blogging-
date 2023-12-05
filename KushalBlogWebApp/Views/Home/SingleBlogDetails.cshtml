@@ -1,0 +1,35 @@
+﻿@using KushalBlogWebApp.Data.Model
+@model SingleBlogModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <div class="mb-3 text-center">
+                <img src="@Model.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-height: 500px;">
+            </div>
+
+            <div class="text-center">
+                <h2>@Model.BlogHeader</h2>
+                <p>@Model.BlogBody</p>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div style="border-bottom: 2px solid black; width: 70%; margin-bottom: 5px;">
+                <h4>Recommended Posts</h4>
+            </div>
+            <div class="row mt-5">
+                <div class="col-4">
+                    <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                </div>
+                <div class="col-8 d-flex align-items-center" style="max-width: 50%;">
+                    <h5 class="mb-4 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Is it Ethical to Travel Now? With that Freedom Comes Responsibility</h5>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

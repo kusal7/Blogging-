@@ -4,6 +4,7 @@ using System.Net;
 using KushalBlogWebApp.Common.Helper;
 using KushalBlogWebApp.Data.IServices;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using KushalBlogWebApp.Models;
 
 namespace KushalBlogWebApp.Controllers
 {
@@ -114,6 +115,23 @@ namespace KushalBlogWebApp.Controllers
         {
            
             var responseMessage = await _adminblogservice.DeletePost(adminBlogModelVm.Id);
+            if (responseMessage.ReturnId > 0)
+            {
+                _notyfService.Success(responseMessage.Msg);
+                return Ok();
+            }
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            var errors = new List<string> { responseMessage.Msg };
+            ViewBag.Error = errors;
+            return PartialView();
+        }
+        #endregion
+
+        #region Update Status
+        [HttpPost]
+        public async Task<IActionResult> UpdatePinnedStatus(AdminBlogModelVm adminBlogModel)
+        {
+            var responseMessage = await _adminblogservice.UpdatePinnedStatus(adminBlogModel);
             if (responseMessage.ReturnId > 0)
             {
                 _notyfService.Success(responseMessage.Msg);
