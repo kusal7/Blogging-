@@ -56,7 +56,7 @@ namespace KushalBlogWebApp.Data.Services
                     var param = new DynamicParameters();
                     
                     await db.OpenAsync();
-                    var datas = await db.QuerySingleAsync<BlogModel>(sql: "[dbo].[usp_GetLatestBlog]",  commandType: CommandType.StoredProcedure);
+                    var datas = await db.QuerySingleOrDefaultAsync<BlogModel>(sql: "[dbo].[usp_GetLatestBlog]",  commandType: CommandType.StoredProcedure);
                     return datas;
                 }
             }

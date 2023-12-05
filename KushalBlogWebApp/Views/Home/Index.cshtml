@@ -24,21 +24,30 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-8">
-            <div class="card p-5 shadow ">
-                <div class=" mb-3 text-left" style="max-width: 100%;">
-                    <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">
+            @if (data is not null)
+            {
+                <div class="card p-5 shadow ">
+                    <div class=" mb-3 text-left" style="max-width: 100%;">
+                        <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">                                     
                 </div>
                 <div class="card-body text-left">
-                    <h3 class="mb-4">@data.BlogHeader</h3>
-                    <p class="card-text">@data.BlogBody</p>
-                    <div class="text-left">
-                        <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">Read Full Article</a>
-                    </div>
+                    
+                        <h3 class="mb-4">@data.BlogHeader</h3>
+                        <p class="card-text">@data.BlogBody</p>
+                        <div class="text-left">
+                            <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">Read Full Article</a>
+                        </div>                   
                 </div>
-            
-
+                </div>
+            }else
+            {
+                <div>
+                    <h4 class="text-danger">
+                        No Latest Post
+                    </h4>
+                </div>
                 
-            </div>
+            }
 
             <div class="row mt-4">
                 @foreach (var blogData in allBlogData)
@@ -68,35 +77,29 @@
                 </div>
             </div>
 
-            <div class="card p-4 shadow">
-                <div style="border-bottom: 2px solid black; width: 100%; margin-bottom: 15px;">
-                    <h4 class="mb-0">Recommended Posts</h4>
-                </div>
-          @*       @foreach(var blogData in allPinnedBlogData)
-                {
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
-                        </div>
-                        <div class="col-8 d-flex align-items-center">
-                            <h5 class="mb-0 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%;">@blogData.BlogHeader</h5>
-                        </div>
+            @if (allPinnedBlogData.Count() > 0)
+            {
+                <div class="card p-4 shadow">
+                    <div style="border-bottom: 2px solid black; width: 100%; margin-bottom: 15px;">
+                        <h4 class="mb-0">Recommended Posts</h4>
                     </div>
-                } *@
-                @foreach(var blogData in allPinnedBlogData)
-{
-    <div class="row mb-4">
-        <div class="col-4">
-            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
-        </div>
-        <div class="col-8 d-flex align-items-center">
-            <h5 class="mb-0 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%;">@blogData.BlogHeader</h5>
-        </div>
-    </div>
-}
 
-              
-            </div>
+                    @foreach (var blogData in allPinnedBlogData)
+                    {
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                            </div>
+                            <div class="col-8 d-flex align-items-center">
+                                <h5 class="mb-0 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%;">@blogData.BlogHeader</h5>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            }
+      
         </div>
 
        
