@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,14 @@ namespace KushalBlogWebApp.Data.Model
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
 
+    }
+    public class SaveBlogComment
+    {
+        public int Id { get; set; }
+        [Required (ErrorMessage ="Full Name or Email is Required")]
+        public string FullName { get; set; }
+        [Required(ErrorMessage = "Comments is Required")]
+        public string Comment { get; set; }
     }
 
 }

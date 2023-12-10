@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DBManager;
 using System.Text.RegularExpressions;
+using KushalBlogWebApp.Data.Common;
 
 namespace KushalBlogWebApp.Data.Services
 {
@@ -106,6 +107,41 @@ namespace KushalBlogWebApp.Data.Services
                 }
             }
             catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<SpResponseMessage> SaveBlogComment(SaveBlogComment  saveBlogComment)
+        {
+            var p = saveBlogComment.PrepareDynamicParameters();
+     
+
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    await db.OpenAsync();
+                    p.Add("@CreatedDate", DateTime.Now);
+                    p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
+                    p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    var result = await db.ExecuteAsync("[dbo].[Usp_IUD_AdminBlog]", param: p, commandType: CommandType.StoredProcedure);
+                    var spresponsemessage = new SpResponseMessage
+                    {
+                        ReturnId = p.Get<int>("@Return_Id"),
+                        Msg = p.Get<string>("@Msg"),
+                        StatusCode = p.Get<int>("@StatusCode"),
+                        MsgType = p.Get<string>("@MsgType")
+                    };
+                    db.Close();
+                    return spresponsemessage;
+
+                }
+            }
+            catch (Exception ex)
             {
 
                 throw;

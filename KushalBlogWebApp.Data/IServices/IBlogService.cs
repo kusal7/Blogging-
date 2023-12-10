@@ -13,6 +13,7 @@ namespace KushalBlogWebApp.Data.IServices
         public Task<BlogModel> GetLatestPost();
         public Task<SingleBlogModel> GetSingleBlogDetails(int Id);
         public Task<IEnumerable<BlogModel>> GetAllPinnedBlogList();
+        public Task<SpResponseMessage> SaveBlogComment(SaveBlogComment saveBlogComment);
 
     }
 }
