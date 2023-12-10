@@ -28,11 +28,13 @@
             {
                 <div class="card p-5 shadow ">
                     <div class=" mb-3 text-left" style="max-width: 100%;">
-                        <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">                                     
+                        <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })">
+                        <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">             
+                        </a>
                 </div>
                 <div class="card-body text-left">
-                    
-                        <h3 class="mb-4">@data.BlogHeader</h3>
+                        <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">
+                        <h3 class="mb-4">@data.BlogHeader</h3> </a>
                         <p class="card-text">@data.BlogBody</p>
                         <div class="text-left">
                             <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">Read Full Article</a>
@@ -54,10 +56,13 @@
                 {
                     <div class="col-md-6">
                         <div class="card p-4 shadow" style="width: 100%;">
-                            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                            <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
+                            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;" href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
+                            </a>
                             <div class="card-body">
-                                <h5 class="mb-4">@blogData.BlogHeader</h5>
-                                <p class="card-text">@blogData.BlogBody</p>
+                                <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">
+                                    <h5 class="mb-4">@blogData.BlogHeader</h5>
+                                </a> <p class="card-text">@blogData.BlogBody</p>
                                 <div class="text-left">
                                     <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">Read Full Article</a>
                                 </div>

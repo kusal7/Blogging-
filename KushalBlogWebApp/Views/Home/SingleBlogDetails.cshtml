@@ -1,35 +1,46 @@
 ﻿@using KushalBlogWebApp.Data.Model
 @model SingleBlogModel
+@{
+    var allPinnedBlogData = ViewBag.AllPinnedBlogList as IEnumerable<BlogModel>;
+}
 
 <div class="container">
     <div class="row">
-        <div class="col-9">
-            <div class="mb-3 text-center">
+        <div class="col-md-9">
+           
+            <div class="mb-3 text-left">
                 <img src="@Model.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-height: 500px;">
             </div>
-
-            <div class="text-center">
-                <h2>@Model.BlogHeader</h2>
-                <p>@Model.BlogBody</p>
+            <div>
+                <h5>
+                    Written Date: @Model.CreatedDate.ToString("MMMM dd, yyyy"), Written By: @Model.CreatedBy
+                </h5>
+            </div>
+            <div >
+                <h2 style="color: #333;" class="text-left">@Model.BlogHeader</h2>
+                <div class="text-left">
+                    <p style="color: #666;">@Model.BlogBody</p>
+                </div> 
+              
             </div>
         </div>
 
-        <div class="col-3">
-            <div style="border-bottom: 2px solid black; width: 70%; margin-bottom: 5px;">
-                <h4>Recommended Posts</h4>
+        <div class="col-md-3">
+            <div style="border-bottom: 2px solid #000; width: 70%; margin-bottom: 15px;">
+                <h4 style="color: #333;">Recommended Posts</h4>
             </div>
-            <div class="row mt-5">
-                <div class="col-4">
-                    <img src="~/images/logo-sm.png" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
-                </div>
-                <div class="col-8 d-flex align-items-center" style="max-width: 50%;">
-                    <h5 class="mb-4 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Is it Ethical to Travel Now? With that Freedom Comes Responsibility</h5>
-                </div>
 
-            </div>
+            @foreach (var post in allPinnedBlogData)
+            {
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <img src="@post.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                    </div>
+                    <div class="col-8 d-flex text-left" style="max-width: 50%;">
+                        <h5 class="mb-3 text-left" style="color: #333; font-weight: bold;">@post.BlogHeader</h5>
+                    </div>
+                </div>
+            }
         </div>
-
-
     </div>
 </div>
-
