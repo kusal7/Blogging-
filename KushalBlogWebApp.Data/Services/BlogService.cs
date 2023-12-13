@@ -112,9 +112,9 @@ namespace KushalBlogWebApp.Data.Services
                 throw;
             }
         }
-        public async Task<SpResponseMessage> SaveBlogComment(SaveBlogComment  saveBlogComment)
+        public async Task<(SpResponseMessage, IEnumerable<BlogsComment>)> SaveBlogComment(SaveBlogComment  saveBlogComment)
         {
-            var p = saveBlogComment.PrepareDynamicParameters();
+            var p = new DynamicParameters();
      
 
             try
@@ -123,12 +123,16 @@ namespace KushalBlogWebApp.Data.Services
                 using (var db = (DbConnection)dbfactory.GetConnection())
                 {
                     await db.OpenAsync();
-                    p.Add("@CreatedDate", DateTime.Now);
+                    p.Add("@BlogId", saveBlogComment.Id);
+                    p.Add("@Username", saveBlogComment.FullName);
+                    p.Add("@BlogComment", saveBlogComment.Comment);
                     p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
                     p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
-                    var result = await db.ExecuteAsync("[dbo].[Usp_IUD_AdminBlog]", param: p, commandType: CommandType.StoredProcedure);
+                    var result = await db.QueryMultipleAsync("[dbo].[Usp_I_BlogComment]", param: p, commandType: CommandType.StoredProcedure);
+                    var blogComments = await result.ReadAsync<BlogsComment>();
+                    var mappeddata = _map.Map<IEnumerable<BlogsComment>>(blogComments);
                     var spresponsemessage = new SpResponseMessage
                     {
                         ReturnId = p.Get<int>("@Return_Id"),
@@ -137,11 +141,34 @@ namespace KushalBlogWebApp.Data.Services
                         MsgType = p.Get<string>("@MsgType")
                     };
                     db.Close();
-                    return spresponsemessage;
+                    return (spresponsemessage, mappeddata);
 
                 }
             }
             catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<BlogsComment>> GetBlogComments(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", Id);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetBlogsComment]", param: param, commandType: CommandType.StoredProcedure);
+                    var blogList = await datas.ReadAsync<BlogsComment>();
+                    var mappeddata = _map.Map<IEnumerable<BlogsComment>>(blogList);
+                    return mappeddata;
+                }
+            }
+            catch (Exception)
             {
 
                 throw;

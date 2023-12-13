@@ -1,6 +1,7 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Office2010.Excel;
+using KushalBlogWebApp.Common.Helper;
 using KushalBlogWebApp.Data.IServices;
 using KushalBlogWebApp.Data.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -31,17 +32,25 @@ namespace KushalBlogWebApp.Controllers
         {
             ViewBag.Id = Id;
             ViewBag.AllPinnedBlogList = await _blogService.GetAllPinnedBlogList();
+            ViewBag.AllPinnedBlogList = await _blogService.GetAllPinnedBlogList();
+            ViewBag.AllBlogComments = await _blogService.GetBlogComments(Id);
             var blogDetails = await _blogService.GetSingleBlogDetails(Id);
-            return View(blogDetails);
-         
+            var commentsData = await _blogService.GetBlogComments(Id);
+
+            if (WebHelper.IsAjaxRequest(Request))
+            {
+                return PartialView("_BlogComments", commentsData);
+            }
+            return View(blogDetails);      
         }
         #endregion
+
+
         #region Save Comment
         [HttpPost]
         public async Task<IActionResult> SaveComment(SaveBlogComment saveBlogComment)
         {
             ViewBag.Id = saveBlogComment.Id;
-            
             if (!ModelState.IsValid)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
@@ -53,9 +62,11 @@ namespace KushalBlogWebApp.Controllers
             }
             else
             {
-                var responseMessage = await _blogService.SaveBlogComment(saveBlogComment);
+                var (responseMessage, data) = await _blogService.SaveBlogComment(saveBlogComment);
+               
                 if (responseMessage.ReturnId > 0)
                 {
+                   
                     _notyfService.Success(responseMessage.Msg);
                     return Ok();
                 }

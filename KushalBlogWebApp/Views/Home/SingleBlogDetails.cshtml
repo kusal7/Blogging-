@@ -2,6 +2,7 @@
 @model SingleBlogModel
 @{
     var allPinnedBlogData = ViewBag.AllPinnedBlogList as IEnumerable<BlogModel>;
+    var allBlogComments = ViewBag.AllBlogComments as IEnumerable<BlogsComment>;
 }
 
 
@@ -38,13 +39,13 @@
                             }
                         </ul>
                         <div class="form-group">
-                            <input type="hidden" class="form-control mt-3" id="blogId" value="@ViewBag.Id">
+                            <input type="hidden" class="form-control" id="blogId" value="@ViewBag.Id">
                             <label for="fullName">Email address or Full Name</label>
-                            <input type="email" class="form-control mt-3" id="fullName" aria-describedby="emailHelp" placeholder="Enter email or fullname">
+                            <input type="text" class="form-control mt-3" id="fullName" aria-describedby="emailHelp" placeholder="Enter email or fullname">
                         </div>
                         <div class="form-group mt-3">
                             <label for="commentfield">Comment</label>
-                            <input type="text" class="form-control mt-3" id="commentfield" placeholder="Join the discussion...">
+                            <textarea class="form-control mt-3" id="commentfield" rows="3" placeholder="Join the discussion..."></textarea>
                         </div>
 
                         <div class="submitBtn" style="margin: 0 auto; text-align: right; width: 100%;">
@@ -53,8 +54,47 @@
                     </form>
 
                 </div>
-                <div id="commentListSection">
-                </div>
+
+                <div class="row mt-3" id="commentListSection">
+                        @foreach (var comment in allBlogComments)
+                        {
+                            <div class="col-md-6">
+                                <div class="card p-4 shadow" style="width: 100%;">
+                                    <div class="row">
+                                        <div class="col-3 align-items-center">
+                                            @{
+                                                string firstLetter = string.Empty;
+
+                                                if (!string.IsNullOrEmpty(comment.Username))
+                                                {
+                                                    firstLetter = comment.Username.Substring(0, 1);
+                                                }
+                                            }
+                                            <div style="text-align: center; padding: 20px; background-color: #87CEEB; width: 100px; height: 100px; border-radius: 100%; overflow: hidden;">
+                                                <h1 style="color: white; font-size: 48px; margin: 0; ">@firstLetter.ToUpper()</h1>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <h4 style="font-weight: bold; font-size: 200%; color: black;">
+                                                @comment.Username
+                                            </h4>
+
+                                            <p>
+                                                @comment.BlogComment
+                                            </p>
+                                            <p>
+                                                @comment.CreatedDate
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                  
+             
+
             </div>
         </div>
 
@@ -84,24 +124,22 @@
 <script>
     function submitForm() {
         debugger;
-     
         var formData = {
+            id: parseInt($('#blogId').val(), 10),
+
             fullName: $('#fullName').val(),
             comment: $('#commentfield').val(),
-            id: $('#blogId').val(),
         };
-
-        // Perform AJAX submission
         $.ajax({
-            type: 'POST', 
+            type: 'POST',
             url: '/Home/SaveComment',
             data: formData,
             success: function (response) {
-                // Handle the success response
                 console.log(response);
+                window.location.reload();
+
             },
             error: function (error) {
-                // Handle the error response
                 console.error(error);
             }
         });

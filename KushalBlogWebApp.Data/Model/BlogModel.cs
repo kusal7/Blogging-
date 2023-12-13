@@ -38,5 +38,12 @@ namespace KushalBlogWebApp.Data.Model
         [Required(ErrorMessage = "Comments is Required")]
         public string Comment { get; set; }
     }
+    public class BlogsComment
+    {
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string BlogComment { get; set; }
+        public DateTime CreatedDate { get;set; }
+    }
 
 }
