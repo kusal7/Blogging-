@@ -973,6 +973,10 @@
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\images\\mainlogo.png",
+      "PackagePath": "staticwebassets\\images\\mainlogo.png"
+    },
+    {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\images\\money-beg.png",
       "PackagePath": "staticwebassets\\images\\money-beg.png"
     },

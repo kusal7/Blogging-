@@ -19,36 +19,35 @@
             Latest Articles
         </h2>
     </div>
-</div>
-
-<div class="container mt-4">
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-8">
             @if (data is not null)
             {
                 <div class="card p-5 shadow ">
                     <div class=" mb-3 text-left" style="max-width: 100%;">
                         <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })">
-                        <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">             
+                            <img src="@data.ImageUrl" alt="logo" class="auth-logo img-fluid">
                         </a>
-                </div>
-                <div class="card-body text-left">
+                    </div>
+                    <div class="card-body text-left">
                         <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">
-                        <h3 class="mb-4">@data.BlogHeader</h3> </a>
+                            <h3 class="mb-4">@data.BlogHeader</h3>
+                        </a>
                         <p class="card-text">@data.BlogBody</p>
                         <div class="text-left">
                             <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @data.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">Read Full Article</a>
-                        </div>                   
+                        </div>
+                    </div>
                 </div>
-                </div>
-            }else
+            }
+            else
             {
                 <div>
                     <h4 class="text-danger">
                         No Latest Post
                     </h4>
                 </div>
-                
+
             }
 
             <div class="row mt-4">
@@ -57,7 +56,7 @@
                     <div class="col-md-6">
                         <div class="card p-4 shadow" style="width: 100%;">
                             <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
-                            <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;" href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
+                                <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;" href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
                             </a>
                             <div class="card-body">
                                 <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">
@@ -93,10 +92,15 @@
                     {
                         <div class="row mb-4">
                             <div class="col-4">
-                                <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                                <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
+                                    <img src="@blogData.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                                </a>
+
                             </div>
                             <div class="col-8 d-flex align-items-center">
-                                <h5 class="mb-0 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%;">@blogData.BlogHeader</h5>
+                                <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @blogData.Id })">
+                                    <h5 class="mb-0 text-center" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%;">@blogData.BlogHeader</h5>
+                                </a>
                             </div>
                         </div>
                     }
@@ -104,10 +108,10 @@
 
                 </div>
             }
-      
+
         </div>
 
-       
+
     </div>
 
 

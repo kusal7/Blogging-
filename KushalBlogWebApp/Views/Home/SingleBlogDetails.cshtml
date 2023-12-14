@@ -56,44 +56,44 @@
                 </div>
 
                 <div class="row mt-3" id="commentListSection">
-                        @foreach (var comment in allBlogComments)
-                        {
-                            <div class="col-md-6">
-                                <div class="card p-4 shadow" style="width: 100%;">
-                                    <div class="row">
-                                        <div class="col-3 align-items-center">
-                                            @{
-                                                string firstLetter = string.Empty;
+                    @foreach (var comment in allBlogComments)
+                    {
+                        <div class="col-md-6">
+                            <div class="card p-4 shadow" style="width: 100%;">
+                                <div class="row">
+                                    <div class="col-3 align-items-center">
+                                        @{
+                                            string firstLetter = string.Empty;
 
-                                                if (!string.IsNullOrEmpty(comment.Username))
-                                                {
-                                                    firstLetter = comment.Username.Substring(0, 1);
-                                                }
+                                            if (!string.IsNullOrEmpty(comment.Username))
+                                            {
+                                                firstLetter = comment.Username.Substring(0, 1);
                                             }
-                                            <div style="text-align: center; padding: 20px; background-color: #87CEEB; width: 100px; height: 100px; border-radius: 100%; overflow: hidden;">
-                                                <h1 style="color: white; font-size: 48px; margin: 0; ">@firstLetter.ToUpper()</h1>
-                                            </div>
+                                        }
+                                        <div style="text-align: center; padding: 20px; background-color: #87CEEB; width: 100px; height: 100px; border-radius: 100%; overflow: hidden;">
+                                            <h1 style="color: white; font-size: 48px; margin: 0; ">@firstLetter.ToUpper()</h1>
                                         </div>
+                                    </div>
 
-                                        <div class="col-md-9">
-                                            <h4 style="font-weight: bold; font-size: 200%; color: black;">
-                                                @comment.Username
-                                            </h4>
+                                    <div class="col-md-9">
+                                        <h4 style="font-weight: bold; font-size: 200%; color: black;">
+                                            @comment.Username
+                                        </h4>
 
-                                            <p>
-                                                @comment.BlogComment
-                                            </p>
-                                            <p>
-                                                @comment.CreatedDate
-                                            </p>
-                                        </div>
+                                        <p>
+                                            @comment.BlogComment
+                                        </p>
+                                        <p>
+                                            @comment.CreatedDate
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        }
-                    </div>
-                  
-             
+                        </div>
+                    }
+                </div>
+
+
 
             </div>
         </div>
@@ -107,10 +107,15 @@
             {
                 <div class="row mt-4">
                     <div class="col-4">
-                        <img src="@post.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                        <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @post.Id })">
+                            <img src="@post.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;"></a>
+
                     </div>
                     <div class="col-8 d-flex text-left" style="max-width: 50%;">
-                        <h5 class="mb-3 text-left" style="color: #333; font-weight: bold;">@post.BlogHeader</h5>
+                        <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @post.Id })">
+                            <h5 class="mb-3 text-left" style="color: #333; font-weight: bold;">@post.BlogHeader</h5>
+                        </a>
+                  
                     </div>
                 </div>
             }
@@ -123,13 +128,12 @@
 
 <script>
     function submitForm() {
-        debugger;
         var formData = {
             id: parseInt($('#blogId').val(), 10),
-
             fullName: $('#fullName').val(),
             comment: $('#commentfield').val(),
         };
+
         $.ajax({
             type: 'POST',
             url: '/Home/SaveComment',
@@ -137,11 +141,16 @@
             success: function (response) {
                 console.log(response);
                 window.location.reload();
-
             },
-            error: function (error) {
-                console.error(error);
+            error: function (xhr, textStatus, errorThrown) {
+                console.error('Error:', errorThrown);
+                console.log('Status:', textStatus);
+                console.log('Response Text:', xhr.responseText);
+            },
+            complete: function () {
+                console.log('Request complete');
             }
         });
     }
+
 </script>

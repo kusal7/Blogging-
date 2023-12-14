@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n6zfHlgvd/f2AMDdDgRGwGmMjNCbiZniPfaiS4+ehco=",
+  "Hash": "tkP/PLNDYFqkJq3rKR/+4xSRa93cRGbMHmleRJsDVI4=",
   "Source": "KushalBlogWebApp",
   "BasePath": "_content/KushalBlogWebApp",
   "Mode": "Default",
@@ -4129,6 +4129,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo-sm-dark.png"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\images\\mainlogo.png",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "images/mainlogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\mainlogo.png"
     },
     {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\images\\money-beg.png",

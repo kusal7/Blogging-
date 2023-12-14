@@ -25,6 +25,17 @@
     <link href="~/assetsjs/select2/css/select2.min.css" rel="stylesheet" />
 
     <link href="~/assetsJs/multi-select/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia&family=Roboto+Slab&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -36,21 +47,22 @@
         }
 
         main {
-            padding-top: 100px;
+            padding-top: 50px;
             padding-bottom: 20px;
         }
 
         .navbar {
-            background-color: #eff6ee; /* Change background color */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-            margin-bottom: 20px;
+          /* Add a subtle box shadow */
+            margin-top: 15px;
+
         }
 
-        .navbar-brand {
-            color: #0c120c; /* Change text color */
-            font-size: 24px;
-            font-weight: bold;
+        .navbar-border {
+            margin-top:8px;
+            border-bottom: 1px solid #000; /* 1px solid black border */
+            width: 88%; /* Set the desired width */
         }
+     
 
         .navbar-toggler-icon {
             background-color: #ffffff; /* Change color of the toggler icon */
@@ -68,13 +80,7 @@
             transition: background-color 0.3s ease; /* Add a smooth transition effect */
         }
 
-      
-
-        .nav-link:hover {
-            background-color: #c0c0c0; /* New background color on hover */
-            color: #ffffff; /* New text color on hover */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
-        }
+     
 
         footer {
             background-color: #343a40; /* Match the navbar background color */
@@ -104,6 +110,37 @@
             flex-shrink: 0;
             color: black;
         }
+        h1{
+            font-family: 'Kalnia', serif;
+        }
+
+        h2 {
+            font-family: 'Kalnia', serif;
+        }
+
+        h3 {
+            font-family: 'Kalnia', serif;
+        }
+
+        h4 {
+            font-family: 'Kalnia', serif;
+        }
+
+        h5 {
+            font-family: 'Kalnia', serif;
+        }
+
+        h6 {
+            font-family: 'Kalnia', serif;
+        }
+        p{
+            font-family: 'Kalnia', serif;
+            color: black;
+        }
+        ul li a {
+            font-family: 'Kalnia', serif;
+            font-family: 'Roboto Slab', serif;
+        }
     </style>
 
 
@@ -111,9 +148,11 @@
 <body>
     <div class="page-wrapper">
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container"> 
-                <a class="navbar-brand" href="#">Test Blog</a>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                    <img src="~/images/mainlogo.png" alt="logo" class="auth-logo img-fluid" style="width: 200px; height: auto; margin-right: 10px;">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -122,7 +161,6 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="@Url.Action("Index","Home")">
                                 Home
-
                             </a>
                         </li>
                         <li class="nav-item">
@@ -138,9 +176,13 @@
                 </div>
             </div>
         </nav>
+        <div class="text-center">
+            <div class="navbar-border mx-auto"></div>
+        </div>
+  
 
         <!-- Page Content -->
-        <main role="main" class="pb-3">
+        <main role="main" >
             @RenderBody()
         </main>
 
@@ -185,7 +227,7 @@
     
         <footer class="py-5 bg-light">
             <div class="container">
-                <p class="m-0 text-center">Test Blog &copy; 2023</p>
+                <p class="m-0 text-center">Kushal's Blog &copy; 2023</p>
             </div>
          
         </footer>
