@@ -12,9 +12,9 @@
           "ClosedXML": "0.102.1",
           "KushalBlogWebApp.Data": "1.0.0",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.2.0",
-          "Select.HtmlToPdf": "23.1.0",
           "Select.HtmlToPdf.NetCore": "23.1.0",
           "Select.Pdf": "23.1.0",
+          "TinyMCE": "6.8.2",
           "Twitter.Bootstrap": "3.0.1.1"
         },
         "runtime": {
@@ -739,7 +739,6 @@
           }
         }
       },
-      "Select.HtmlToPdf/23.1.0": {},
       "Select.HtmlToPdf.NetCore/23.1.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
@@ -1527,6 +1526,7 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "TinyMCE/6.8.2": {},
       "Twitter.Bootstrap/3.0.1.1": {
         "dependencies": {
           "bootstrap": "3.0.1"
@@ -2223,13 +2223,6 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "Select.HtmlToPdf/23.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-V4XWTuZPVXNgKeGBhYRZml3WCNTPPlZAGpmaU6FkkGNzDOS27B8y6Q+dtnk0Csj9eChKFk4O5Yajyi7r+uzmHA==",
-      "path": "select.htmltopdf/23.1.0",
-      "hashPath": "select.htmltopdf.23.1.0.nupkg.sha512"
-    },
     "Select.HtmlToPdf.NetCore/23.1.0": {
       "type": "package",
       "serviceable": true,
@@ -2789,6 +2782,13 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "TinyMCE/6.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lM6v3A56IbOQJduuwpw4doSnaTUa9HDfNp8no0zslkuLP/oNsGVT6ocwJJu+98qLKjZQBPdEZbI87XRGrn2FwA==",
+      "path": "tinymce/6.8.2",
+      "hashPath": "tinymce.6.8.2.nupkg.sha512"
     },
     "Twitter.Bootstrap/3.0.1.1": {
       "type": "package",

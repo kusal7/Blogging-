@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B3bKhataeiOd7C2GoNOxUwIHSmrAhOAFHhZuK5OJ4/1jRbuE3NGdYMz0Ocv1It6hH4dsR0A8QaMPK+Yt1vOTFQ==",
+  "dgSpecHash": "NB7lQ2EkPDFbqxx8nux55rm1BZgaptgFlIPWeHtANnhJrQ9KL3b1aCrQQhjyzZw/m2lov+dDK5P6PeBZNrWx1A==",
   "success": true,
   "projectFilePath": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\KushalBlogWebApp.csproj",
   "expectedPackageFiles": [
@@ -98,7 +98,6 @@
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\select.htmltopdf\\23.1.0\\select.htmltopdf.23.1.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\select.htmltopdf.netcore\\23.1.0\\select.htmltopdf.netcore.23.1.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\select.pdf\\23.1.0\\select.pdf.23.1.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
@@ -179,6 +178,7 @@
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\tinymce\\6.8.2\\tinymce.6.8.2.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\twitter.bootstrap\\3.0.1.1\\twitter.bootstrap.3.0.1.1.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\xlparser\\1.5.2\\xlparser.1.5.2.nupkg.sha512"
   ],

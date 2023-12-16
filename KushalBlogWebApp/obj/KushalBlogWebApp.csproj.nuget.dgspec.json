@@ -137,10 +137,6 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Select.HtmlToPdf": {
-              "target": "Package",
-              "version": "[23.1.0, )"
-            },
             "Select.HtmlToPdf.NetCore": {
               "target": "Package",
               "version": "[23.1.0, )"
@@ -148,6 +144,10 @@
             "Select.Pdf": {
               "target": "Package",
               "version": "[23.1.0, )"
+            },
+            "TinyMCE": {
+              "target": "Package",
+              "version": "[6.8.2, )"
             },
             "Twitter.Bootstrap": {
               "target": "Package",

@@ -122,9 +122,9 @@
     <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
     <PackageReference Include="ClosedXML" Version="0.102.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
-    <PackageReference Include="Select.HtmlToPdf" Version="23.1.0" />
     <PackageReference Include="Select.HtmlToPdf.NetCore" Version="23.1.0" />
     <PackageReference Include="Select.Pdf" Version="23.1.0" />
+    <PackageReference Include="TinyMCE" Version="6.8.2" />
     <PackageReference Include="Twitter.Bootstrap" Version="3.0.1.1" />
   </ItemGroup>
 
