@@ -46,7 +46,11 @@
         <div id="dynamicFieldsContainer">
             <!-- Dynamic fields will be added here -->
         </div>
-        <button type="button" class="btn btn-sm btn-success" onclick="addDynamicField()">Add Field</button>
+       
+            <div class="col text-end mt-3">
+                <button type="button" class="btn btn-sm btn-success" onclick="addDynamicField()">Add New Field</button>
+            </div>
+  
 
         <div class="form-check form-switch">
             <input asp-for="PinnedStatus" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -86,38 +90,53 @@
 
     function addDynamicField() {
         dynamicFieldsCount++;
-
         var dynamicFieldHtml = `
                 <div class="row dynamic-field" id="dynamicField${dynamicFieldsCount}">
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="blogHeader">Blog Header</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Header" name="DynamicFields[${dynamicFieldsCount}].BlogHeader">
+                           <label class="mt-3 mb-2" style="font-weight: bold;">Section ${dynamicFieldsCount}</label>
+
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="blogHeader">Blog Header</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Header" name="DynamicFields[${dynamicFieldsCount}].BlogHeader">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="blogBody">Blog Body</label>
-                        <div class="input-group">
-                            <textarea class="form-control" placeholder="Blog Body" name="DynamicFields[${dynamicFieldsCount}].BlogBody"></textarea>
+                   
+                  
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="blogBody">Blog Body</label>
+                            <div class="input-group">
+                                <textarea class="form-control" placeholder="Blog Body" name="DynamicFields[${dynamicFieldsCount}].BlogBody"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label class="form-label" for="image">Image</label>
-                        <div class="input-group">
-                            <input type="file" class="dropify" name="DynamicFields[${dynamicFieldsCount}].ImageFile" />
-                            <img src="" height="125" width="125" alt="" hidden class="rounded me-1">
+                  
+                 
+                        <div class="form-group mb-2">
+                            <label class="form-label" for="image">Image</label>
+                            <div class="input-group">
+                                <input type="file" class="dropify" name="DynamicFields[${dynamicFieldsCount}].ImageFile" />
+                                <img src="" height="125" width="125" alt="" hidden class="rounded me-1">
+                            </div>
                         </div>
+             
+                    <div class="col text-end">
+                            <button type="button" class="btn btn-sm btn-danger" onclick="removeDynamicField(${dynamicFieldsCount})">Remove Section ${dynamicFieldsCount}</button>
                     </div>
-                    <button type="button" class="btn btn-sm btn-danger" onclick="removeDynamicField(${dynamicFieldsCount})">Remove</button>
                 </div>
             `;
-
         document.getElementById('dynamicFieldsContainer').insertAdjacentHTML('beforeend', dynamicFieldHtml);
     }
 
     function removeDynamicField(dynamicFieldId) {
         var dynamicField = document.getElementById(`dynamicField${dynamicFieldId}`);
         dynamicField.remove();
+    }
+
+    function removeLastDynamicField() {
+        if (dynamicFieldsCount > 0) {
+            var dynamicField = document.getElementById(`dynamicField${dynamicFieldsCount}`);
+            dynamicField.remove();
+            dynamicFieldsCount--;
+        }
     }
     </script>
 
