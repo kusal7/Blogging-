@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PXQCGwv3DBbQavdBzVsky9JCWwJNr4xupCCEu8fL+O8=",
+  "Hash": "lz9sHO1EkL0e2gdCLuGZzr3TFKB1T+QiOpqMz/VQjEo=",
   "Source": "KushalBlogWebApp",
   "BasePath": "_content/KushalBlogWebApp",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_12_13_1263.jpg",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/viber_image_2023-12-13_10-07-22-272_2023_12_16_13_12_13_1263.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_12_13_1263.jpg"
     },
     {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg",

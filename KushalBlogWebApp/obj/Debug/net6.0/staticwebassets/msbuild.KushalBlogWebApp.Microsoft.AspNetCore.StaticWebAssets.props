@@ -32,6 +32,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_12_13_1263.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/viber_image_2023-12-13_10-07-22-272_2023_12_16_13_12_13_1263.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_12_13_1263.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>KushalBlogWebApp</SourceId>
