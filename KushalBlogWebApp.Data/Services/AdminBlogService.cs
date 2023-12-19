@@ -87,9 +87,20 @@ namespace KushalBlogWebApp.Data.Services
                 ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
                 CreatedBy = adminBlogModelVm.CreatedBy,
                 UpdatedBy = adminBlogModelVm.UpdatedBy,
-                PinnedStatus = adminBlogModelVm.PinnedStatus
-
+                PinnedStatus = adminBlogModelVm.PinnedStatus,
+              
+                
             };
+
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("BlogId", typeof(int));
+            dataTable.Columns.Add("BlogHeader", typeof(string));
+            dataTable.Columns.Add("BlogBody", typeof(string));
+            dataTable.Columns.Add("ImageUrl", typeof(string));
+
+
+            var dataRows = adminBlogModelVm.DynamicFields?.Select(item => dataTable.Rows.Add(item.BlogId,item.BlogHeader, item.BlogBody, "abc"
+            )).ToArray();
 
             var p = blogModel.PrepareDynamicParameters();
             if (adminBlogModelVm.Id > 0)
@@ -108,6 +119,7 @@ namespace KushalBlogWebApp.Data.Services
                     p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
                     p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    p.Add("@DynamicFields", dataTable.AsTableValuedParameter("[dbo].[DynamicFieldList]"));
                     var result = await db.ExecuteAsync("[dbo].[Usp_IUD_AdminBlog]", param: p, commandType: CommandType.StoredProcedure);
                     var spresponsemessage = new SpResponseMessage
                     {

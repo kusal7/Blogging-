@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lz9sHO1EkL0e2gdCLuGZzr3TFKB1T+QiOpqMz/VQjEo=",
+  "Hash": "OL90Kbx4NPwZOxZD6XK0DeFrrnpJWiBP8d3Vnr43Z1o=",
   "Source": "KushalBlogWebApp",
   "BasePath": "_content/KushalBlogWebApp",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Annotation 2023-10-12 161815_2023_12_04_14_38_47_4120.png"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BalanceLogReportExcelReports_20231219102240922.xlsx",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BalanceLogReportExcelReports_20231219102240922.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BalanceLogReportExcelReports_20231219102240922.xlsx"
     },
     {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg",
