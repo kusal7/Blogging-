@@ -97,11 +97,37 @@
     }
 
 
+    // function removeDynamicField(dynamicFieldId) {
+    //     var dynamicField = document.getElementById(`dynamicField${dynamicFieldId}`);
+    //     dynamicField.remove();
+    // }
     function removeDynamicField(dynamicFieldId) {
         var dynamicField = document.getElementById(`dynamicField${dynamicFieldId}`);
         dynamicField.remove();
-    }
 
+        // Update the IDs of the remaining dynamic fields
+        var dynamicFields = document.querySelectorAll('.dynamic-field');
+        dynamicFields.forEach(function (field, index) {
+            var currentId = field.id.replace('dynamicField', '');
+            if (index >= dynamicFieldId) {
+                // Update the ID and labels
+                field.id = `dynamicField${parseInt(currentId) - 1}`;
+                field.querySelector('label').innerText = `Section ${parseInt(currentId) - 1}`;
+
+                // Update the name attributes
+                field.querySelectorAll('[name]').forEach(function (element) {
+                    var attributeName = element.getAttribute('name');
+                    element.setAttribute('name', attributeName.replace(`DynamicFields[${currentId}]`, `DynamicFields[${parseInt(currentId) - 1}]`));
+                });
+
+                // Update the button text
+                field.querySelector('button').innerText = `Remove Section ${parseInt(currentId) - 1}`;
+            }
+        });
+
+        // Update the dynamicFieldsCount
+        dynamicFieldsCount--;
+    }
         FormHandler.init({
             method: 'POST',
             actionUrl: '@Url.Action("SavePost", "AdminBlog")',
