@@ -88,19 +88,61 @@ namespace KushalBlogWebApp.Data.Services
                 CreatedBy = adminBlogModelVm.CreatedBy,
                 UpdatedBy = adminBlogModelVm.UpdatedBy,
                 PinnedStatus = adminBlogModelVm.PinnedStatus,
-              
-                
             };
+
+
+   
 
             var dataTable = new DataTable();
             dataTable.Columns.Add("BlogId", typeof(int));
             dataTable.Columns.Add("BlogHeader", typeof(string));
             dataTable.Columns.Add("BlogBody", typeof(string));
             dataTable.Columns.Add("ImageUrl", typeof(string));
+            //foreach (var item in adminBlogModelVm.DynamicFields)
+            //{
+            //    if (item.ImageFile != null)
+            //    {
+            //        var folderPath = _config["Folder:BlogImage"];
+            //        imagePath = await FileUploadHandler.UploadFile(_environment, folderPath, adminBlogModelVm.ImageFile);
+            //    }
+            //}
+
+            //var dynamicFieldsData = adminBlogModelVm.DynamicFields?.Select(item => new DynamicFieldSaveVm
+            //{
+            //    BlogId = item.BlogId,
+            //    BlogBody = item.BlogBody,
+            //    BlogHeader = item.BlogHeader,
+            //    ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
+            //}).ToList();
 
 
-            var dataRows = adminBlogModelVm.DynamicFields?.Select(item => dataTable.Rows.Add(item.BlogId,item.BlogHeader, item.BlogBody, "abc"
-            )).ToArray();
+
+
+
+            foreach (var item in adminBlogModelVm.DynamicFields)
+            {
+                string dynamicImagePath = null;
+
+                if (item.ImageFile != null)
+                {
+                    var folderPath = _config["Folder:BlogImage"];
+                    dynamicImagePath = await FileUploadHandler.UploadFile(_environment, folderPath, item.ImageFile);
+                }
+
+                // Add the data to the DataTable for each dynamic field
+                var row = dataTable.NewRow();
+                row["BlogId"] = item.BlogId;
+                row["BlogHeader"] = item.BlogHeader;
+                row["BlogBody"] = item.BlogBody;
+                row["ImageUrl"] = dynamicImagePath ?? existingImage; // Use dynamicImagePath if available, otherwise use existingImage
+                dataTable.Rows.Add(row);
+            }
+
+            // Now, you have a DataTable with data from all dynamic fields
+
+
+
+
 
             var p = blogModel.PrepareDynamicParameters();
             if (adminBlogModelVm.Id > 0)
