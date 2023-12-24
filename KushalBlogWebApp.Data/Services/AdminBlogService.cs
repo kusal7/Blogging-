@@ -245,7 +245,7 @@ namespace KushalBlogWebApp.Data.Services
                 BlogBody = adminBlogModelVm.BlogBody,
                 BlogHeader = adminBlogModelVm.BlogHeader,
                 ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
-                BlogId = adminBlogModelVm.Id,
+                BlogId = adminBlogModelVm.BlogId,
 
             };
 
@@ -296,13 +296,34 @@ namespace KushalBlogWebApp.Data.Services
                     var param = new DynamicParameters();
                     await db.OpenAsync();
                     param.Add("@Id", Id);
-                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllChildBlogDetails]", commandType: CommandType.StoredProcedure);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllChildBlogDetails]",param:param, commandType: CommandType.StoredProcedure);
 
                     var blogLost = await datas.ReadAsync<AdminBlogModel>();
                     var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
                     var mappeddata = _mapper.Map<PagedResponse<AdminBlogModel>>(pagedInfo);
                     mappeddata.Items = blogLost;
                     return mappeddata;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<AddNewChildBlogVm> GetChildBlogById(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", Id);
+                    var data = await db.QuerySingleAsync<AddNewChildBlogVm>(sql: "[dbo].[usp_GetChildBlogPostById]", param: param, commandType: CommandType.StoredProcedure);
+                    return data;
 
                 }
             }

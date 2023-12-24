@@ -1,5 +1,5 @@
 ﻿@using KushalBlogWebApp.Data.Model
-@model AdminBlogModelVm
+@model AddNewChildBlogVm
 
 <form id="formBlogEdit" class="form-horizontal auth-form" method="post" autocomplete="off">
 
@@ -27,13 +27,7 @@
             </div>
             <span class="text-danger" asp-validation-for="BlogBody"></span>
         </div>
-        <div class="form-group mb-2">
-            <label class="form-label" for="createdBy">Written By</label>
-            <div class="input-group">
-                <input asp-for="CreatedBy" type="text" class="form-control" placeholder="Blog Body" id="createdBy">
-            </div>
-            <span class="text-danger" asp-validation-for="UpdatedBy"></span>
-        </div>
+
         <div class="form-group mb-2">
             <label class="form-label" for="image">Image</label>
             <div class="input-group">
@@ -42,19 +36,7 @@
             </div>
 
         </div>
-        <div class="form-group mb-2">
-            <label class="form-label" for="updatedBy">Updated By</label>
-            <div class="input-group">
-                <input asp-for="UpdatedBy" type="text" class="form-control" placeholder="Blog Body" id="updatedBy">
-            </div>
-            <span class="text-danger" asp-validation-for="UpdatedBy"></span>
-        </div>
 
-
-        <div class="form-check form-switch">
-            <input asp-for="PinnedStatus" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Is Active</label>
-        </div>
     </div>
 
 
@@ -68,7 +50,7 @@
 
     FormHandler.init({
         method: 'POST',
-        actionUrl: '@Url.Action("EditPost", "AdminBlog")',
+        actionUrl: '@Url.Action("SaveNewChlidBlog", "AdminBlog")',
         containerSelector: '#add-new .modal-body',
         selector: '#formBlogEdit'
     }, function () {

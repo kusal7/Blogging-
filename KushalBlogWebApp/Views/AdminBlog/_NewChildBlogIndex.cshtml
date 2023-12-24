@@ -10,11 +10,12 @@
     <thead>
         <tr>
             <th>S.No</th>
+            <th>S.No</th>
             <th>Blog Header</th>
             <th>Blog Body</th>
-            <th>Written By</th>
             <th>Image</th>
             <th>Created Date</th>
+            <th>Action</th>
 
         </tr>
     </thead>
@@ -26,6 +27,7 @@
         {
             <tr>
                 <td>@Sn</td>
+                <td>@item.Id</td>
                 <td>@item.BlogHeader</td>
                 <td>@item.BlogBody</td>
                 <td>
@@ -37,8 +39,7 @@
 
                 <td name="buttons">
                     <div class=" float-center">
-                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Add New Child Blog" onclick="ShowPopUp('@Url.Action("AddNewChildBlog", "AdminBlog", new { Id = item.Id })', 'Add New Child Blog','modal-dialog modal-lg')"><i class="dripicons-plus" aria-hidden="true"></i></button>
-                        <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Blog" onclick="ShowPopUp('@Url.Action("EditPost", "AdminBlog", new { Id = item.Id })', 'Edit Blog')"><i class="dripicons-pencil"></i></button>
+                        <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Blog" onclick="ShowPopUp('@Url.Action("EditChildBlog", "AdminBlog", new { Id = item.Id })', 'Edit Blog')"><i class="dripicons-pencil"></i></button>
                         <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Blog" onclick="ShowPopUp('@Url.Action("DeletePost", "AdminBlog", new { Id = item.Id })', 'Delete Blog','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
                     </div>
                 </td>

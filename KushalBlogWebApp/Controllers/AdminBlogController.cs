@@ -153,8 +153,8 @@ namespace KushalBlogWebApp.Controllers
             ViewBag.BlogsId = Id;
             return PartialView();
         }
-        [HttpPost]
 
+        [HttpPost]
         public async Task<IActionResult> SaveNewChlidBlog(AddNewChildBlogVm adminBlogModelVm)
         {
             if (!ModelState.IsValid)
@@ -182,6 +182,40 @@ namespace KushalBlogWebApp.Controllers
         }
 
         #endregion
+        #region Edit Child Blog
+        [HttpGet]
+        public async Task<IActionResult> EditChildBlog(int Id)
+        {
+            var data = await _adminblogservice.GetChildBlogById(Id);
+            return PartialView(data);
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditChildBlog(AddNewChildBlogVm adminBlogModelVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return PartialView();
+            }
+            else
+            {
+                var responseMessage = await _adminblogservice.SaveChildBlog(adminBlogModelVm);
+                if (responseMessage.ReturnId > 0)
+                {
+                    _notyfService.Success(responseMessage.Msg);
+                    return Ok();
+                }
+                else
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    var errors = new List<string> { responseMessage.Msg };
+                    ViewBag.Error = errors;
+                    return PartialView();
+                }
+
+            }
+        }
+        #endregion
 
         #region Blog Child Listing
         [HttpGet]
@@ -190,7 +224,7 @@ namespace KushalBlogWebApp.Controllers
             var data = await _adminblogservice.GetAllChildBlogDetails(Id);
             if (WebHelper.IsAjaxRequest(Request))
             {
-                return PartialView("_AdminBlogIndex", data);
+                return PartialView("_NewChildBlogIndex", data);
             }
             return View(data);
         }
