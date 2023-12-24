@@ -15,5 +15,7 @@ namespace KushalBlogWebApp.Data.IServices
         public Task<AdminBlogModelVm> GetBlogPostById(int Id);
         public Task<SpResponseMessage> DeletePost(int Id);
         public Task<SpResponseMessage> UpdatePinnedStatus(AdminBlogModelVm adminBlogModelVm);
+        public Task<SpResponseMessage> SaveChildBlog(AddNewChildBlogVm adminBlogModelVm);
+        public Task<PagedResponse<AdminBlogModel>> GetAllChildBlogDetails(int Id);
     }
 }

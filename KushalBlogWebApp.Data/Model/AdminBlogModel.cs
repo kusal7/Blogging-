@@ -15,7 +15,6 @@ namespace KushalBlogWebApp.Data.Model
         public string ImageUrl { get; set; } = String.Empty;
         public IFormFile? ImageFile { get; set; }
         public bool PinnedStatus { get; set; }
-        public List<DynamicField>? DynamicFields { get; set; }
 
 
     }
@@ -30,15 +29,17 @@ namespace KushalBlogWebApp.Data.Model
 
     }
 
-    public class DynamicField
+    public class AddNewChildBlogVm
     {
+        public int Id { get; set; }
         public int BlogId { get; set; }
         public string? BlogHeader { get; set; }
         public string? BlogBody { get; set; }
         public IFormFile? ImageFile { get; set; }
     }
-    public class DynamicFieldSaveVm
+    public class AddNewChildBlogSaveVm
     {
+        public int Id { get; set; }
         public int BlogId { get; set; }
         public string? BlogHeader { get; set; }
         public string? BlogBody { get; set; }

@@ -61,8 +61,11 @@
 
                 <td name="buttons">
                     <div class=" float-center">
-                        <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Amount Type" onclick="ShowPopUp('@Url.Action("EditPost", "AdminBlog", new { Id = item.Id })', 'Edit Blog')"><i class="dripicons-pencil"></i></button>
-                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Amount Type" onclick="ShowPopUp('@Url.Action("DeletePost", "AdminBlog", new { Id = item.Id })', 'Delete Blog','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
+                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Add New Child Blog" onclick="ShowPopUp('@Url.Action("AddNewChildBlog", "AdminBlog", new { Id = item.Id })', 'Add New Child Blog','modal-dialog modal-lg')"><i class="dripicons-plus" aria-hidden="true"></i></button>
+                        <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Blog" onclick="ShowPopUp('@Url.Action("EditPost", "AdminBlog", new { Id = item.Id })', 'Edit Blog')"><i class="dripicons-pencil"></i></button>
+                        <a href="@Url.Action("ChildBlogIndex", "AdminBlog", new { Id = item.Id })" style="color: #000; border-bottom: 2px solid #007bff; font-weight: bold; text-decoration: none;">Child Blog List</a>
+
+                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Blog" onclick="ShowPopUp('@Url.Action("DeletePost", "AdminBlog", new { Id = item.Id })', 'Delete Blog','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
                     </div>
                 </td>
             </tr>

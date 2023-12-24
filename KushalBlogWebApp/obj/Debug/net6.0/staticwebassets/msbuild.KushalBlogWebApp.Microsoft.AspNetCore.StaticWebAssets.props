@@ -32,6 +32,54 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BalanceLogReportExcelReports_20231219102240922.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\image 3_2023_12_23_09_59_06_5191.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/image 3_2023_12_23_09_59_06_5191.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\image 3_2023_12_23_09_59_06_5191.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\Image2_2023_12_23_09_59_06_5031.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/Image2_2023_12_23_09_59_06_5031.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\Image2_2023_12_23_09_59_06_5031.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\Main Image_2023_12_23_09_58_57_9851.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/Main Image_2023_12_23_09_58_57_9851.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\Main Image_2023_12_23_09_58_57_9851.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>KushalBlogWebApp</SourceId>
@@ -256,6 +304,86 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_11_12_8680.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_16_59_4659.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/viber_image_2023-12-13_10-07-22-272_2023_12_19_17_16_59_4659.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_16_59_4659.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_17_02_7070.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/viber_image_2023-12-13_10-07-22-272_2023_12_19_17_17_02_7070.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_17_02_7070.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_20_54_3510.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/viber_image_2023-12-24_16-15-34-871_2023_12_24_15_20_54_3510.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_20_54_3510.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_00_5672.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_00_5672.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_00_5672.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_18_2130.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_18_2130.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_18_2130.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>KushalBlogWebApp</SourceId>
@@ -399,6 +527,70 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_09_15_2614.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_17_02_7026.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_17_02_7026.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_17_02_7026.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_36_5655.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_36_5655.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_36_5655.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_43_0797.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_43_0797.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_43_0797.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_55_26_2714.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>KushalBlogWebApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KushalBlogWebApp</BasePath>
+      <RelativePath>BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_55_26_2714.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_55_26_2714.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BlogImages\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_06_14_37_16_3218.jpg))">
       <SourceType>Package</SourceType>

@@ -91,57 +91,6 @@ namespace KushalBlogWebApp.Data.Services
             };
 
 
-   
-
-            var dataTable = new DataTable();
-            dataTable.Columns.Add("BlogId", typeof(int));
-            dataTable.Columns.Add("BlogHeader", typeof(string));
-            dataTable.Columns.Add("BlogBody", typeof(string));
-            dataTable.Columns.Add("ImageUrl", typeof(string));
-            //foreach (var item in adminBlogModelVm.DynamicFields)
-            //{
-            //    if (item.ImageFile != null)
-            //    {
-            //        var folderPath = _config["Folder:BlogImage"];
-            //        imagePath = await FileUploadHandler.UploadFile(_environment, folderPath, adminBlogModelVm.ImageFile);
-            //    }
-            //}
-
-            //var dynamicFieldsData = adminBlogModelVm.DynamicFields?.Select(item => new DynamicFieldSaveVm
-            //{
-            //    BlogId = item.BlogId,
-            //    BlogBody = item.BlogBody,
-            //    BlogHeader = item.BlogHeader,
-            //    ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
-            //}).ToList();
-
-
-
-
-
-            foreach (var item in adminBlogModelVm.DynamicFields)
-            {
-                string dynamicImagePath = null;
-
-                if (item.ImageFile != null)
-                {
-                    var folderPath = _config["Folder:BlogImage"];
-                    dynamicImagePath = await FileUploadHandler.UploadFile(_environment, folderPath, item.ImageFile);
-                }
-
-                // Add the data to the DataTable for each dynamic field
-                var row = dataTable.NewRow();
-                row["BlogId"] = item.BlogId;
-                row["BlogHeader"] = item.BlogHeader;
-                row["BlogBody"] = item.BlogBody;
-                row["ImageUrl"] = dynamicImagePath ?? existingImage; // Use dynamicImagePath if available, otherwise use existingImage
-                dataTable.Rows.Add(row);
-            }
-
-            // Now, you have a DataTable with data from all dynamic fields
-
-
-
 
 
             var p = blogModel.PrepareDynamicParameters();
@@ -161,7 +110,6 @@ namespace KushalBlogWebApp.Data.Services
                     p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
                     p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
-                    p.Add("@DynamicFields", dataTable.AsTableValuedParameter("[dbo].[DynamicFieldList]"));
                     var result = await db.ExecuteAsync("[dbo].[Usp_IUD_AdminBlog]", param: p, commandType: CommandType.StoredProcedure);
                     var spresponsemessage = new SpResponseMessage
                     {
@@ -193,6 +141,7 @@ namespace KushalBlogWebApp.Data.Services
                     param.Add("@Id", Id);
                     var data = await db.QuerySingleAsync<AdminBlogModelVm>(sql: "[dbo].[usp_GetBlogPostById]", param: param, commandType: CommandType.StoredProcedure);
                     return data;
+
                 }
             }
             catch (Exception)
@@ -268,5 +217,101 @@ namespace KushalBlogWebApp.Data.Services
                 throw;
             }
         }
+        public async Task<SpResponseMessage> SaveChildBlog(AddNewChildBlogVm adminBlogModelVm)
+        {
+            string imagePath = "";
+            string existingImage = string.Empty;
+            if (adminBlogModelVm.Id > 0)
+            {
+                var result = await GetBlogPostById(adminBlogModelVm.Id);
+                existingImage = result.ImageUrl;
+            }
+            if (adminBlogModelVm.ImageFile != null)
+            {
+                if (!string.IsNullOrEmpty(existingImage) && existingImage != " ")
+                {
+                    string imgPath = existingImage.Substring(1);
+                    string existingImages = Path.Combine("" + _environment.WebRootPath, imgPath);
+                    System.IO.File.Delete(existingImages);
+                }
+
+                var folderPath = _config["Folder:BlogImage"];
+                imagePath = await FileUploadHandler.UploadFile(_environment, folderPath, adminBlogModelVm.ImageFile);
+            }
+
+            var blogModel = new AddNewChildBlogSaveVm()
+            {
+                Id = adminBlogModelVm.Id,
+                BlogBody = adminBlogModelVm.BlogBody,
+                BlogHeader = adminBlogModelVm.BlogHeader,
+                ImageUrl = adminBlogModelVm.ImageFile != null ? imagePath : existingImage,
+                BlogId = adminBlogModelVm.Id,
+
+            };
+
+            var p = blogModel.PrepareDynamicParameters();
+            if (adminBlogModelVm.Id > 0)
+            {
+                p.AddMore("Event", "U");
+            }
+
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    await db.OpenAsync();
+                    p.Add("@CreatedDate", DateTime.Now);
+                    p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
+                    p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    var result = await db.ExecuteAsync("[dbo].[Usp_IUD_AdminChildBlog]", param: p, commandType: CommandType.StoredProcedure);
+                    var spresponsemessage = new SpResponseMessage
+                    {
+                        ReturnId = p.Get<int>("@Return_Id"),
+                        Msg = p.Get<string>("@Msg"),
+                        StatusCode = p.Get<int>("@StatusCode"),
+                        MsgType = p.Get<string>("@MsgType")
+                    };
+                    db.Close();
+                    return spresponsemessage;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public async Task<PagedResponse<AdminBlogModel>> GetAllChildBlogDetails(int Id)
+        {
+            try
+            {
+
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", Id);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllChildBlogDetails]", commandType: CommandType.StoredProcedure);
+
+                    var blogLost = await datas.ReadAsync<AdminBlogModel>();
+                    var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
+                    var mappeddata = _mapper.Map<PagedResponse<AdminBlogModel>>(pagedInfo);
+                    mappeddata.Items = blogLost;
+                    return mappeddata;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

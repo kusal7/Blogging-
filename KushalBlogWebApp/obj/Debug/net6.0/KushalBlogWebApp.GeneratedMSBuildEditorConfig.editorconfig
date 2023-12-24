@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/AddNewChildBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXEFkZE5ld0NoaWxkQmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/ChildBlogIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXENoaWxkQmxvZ0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/DeletePost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXERlbGV0ZVBvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/_AdminBlogIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXF9BZG1pbkJsb2dJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/_NewChildBlogIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXF9OZXdDaGlsZEJsb2dJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/Home/Index.cshtml]

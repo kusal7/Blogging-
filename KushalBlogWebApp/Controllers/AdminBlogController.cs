@@ -114,7 +114,7 @@ namespace KushalBlogWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> DeletePost(AdminBlogModelVm adminBlogModelVm)
         {
-           
+
             var responseMessage = await _adminblogservice.DeletePost(adminBlogModelVm.Id);
             if (responseMessage.ReturnId > 0)
             {
@@ -142,6 +142,57 @@ namespace KushalBlogWebApp.Controllers
             var errors = new List<string> { responseMessage.Msg };
             ViewBag.Error = errors;
             return PartialView();
+        }
+        #endregion
+
+        #region Add New Child Blog
+
+        [HttpGet]
+        public IActionResult AddNewChildBlog(int Id)
+        {
+            ViewBag.BlogsId = Id;
+            return PartialView();
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> SaveNewChlidBlog(AddNewChildBlogVm adminBlogModelVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return PartialView();
+            }
+            else
+            {
+                var responseMessage = await _adminblogservice.SaveChildBlog(adminBlogModelVm);
+                if (responseMessage.ReturnId > 0)
+                {
+                    _notyfService.Success(responseMessage.Msg);
+                    return Ok();
+                }
+                else
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    var errors = new List<string> { responseMessage.Msg };
+                    ViewBag.Error = errors;
+                    return PartialView();
+                }
+
+            }
+        }
+
+        #endregion
+
+        #region Blog Child Listing
+        [HttpGet]
+        public async Task<IActionResult> ChildBlogIndex(int Id)
+        {
+            var data = await _adminblogservice.GetAllChildBlogDetails(Id);
+            if (WebHelper.IsAjaxRequest(Request))
+            {
+                return PartialView("_AdminBlogIndex", data);
+            }
+            return View(data);
         }
         #endregion
     }

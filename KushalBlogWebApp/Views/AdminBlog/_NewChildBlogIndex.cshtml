@@ -1,0 +1,52 @@
+﻿@using KushalBlogWebApp.Data.Common.Paging;
+@using KushalBlogWebApp.Data.Model;
+@using KushalBlogWebApp.Models.Pagination;
+@model PagedResponse<AdminBlogModel>
+
+@{
+    int Sn = 1;
+}
+<table id="datatable-buttons12" class="table table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Blog Header</th>
+            <th>Blog Body</th>
+            <th>Written By</th>
+            <th>Image</th>
+            <th>Created Date</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@Sn</td>
+                <td>@item.BlogHeader</td>
+                <td>@item.BlogBody</td>
+                <td>
+                    <img src="@item.ImageUrl" alt="" class="rounded thumb-lg me-1 open-image" style="width: 50px; height: 50px;">
+                </td>
+                <td>@item.CreatedDate</td>
+
+
+
+                <td name="buttons">
+                    <div class=" float-center">
+                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Add New Child Blog" onclick="ShowPopUp('@Url.Action("AddNewChildBlog", "AdminBlog", new { Id = item.Id })', 'Add New Child Blog','modal-dialog modal-lg')"><i class="dripicons-plus" aria-hidden="true"></i></button>
+                        <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Blog" onclick="ShowPopUp('@Url.Action("EditPost", "AdminBlog", new { Id = item.Id })', 'Edit Blog')"><i class="dripicons-pencil"></i></button>
+                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Blog" onclick="ShowPopUp('@Url.Action("DeletePost", "AdminBlog", new { Id = item.Id })', 'Delete Blog','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
+                    </div>
+                </td>
+            </tr>
+            Sn = Sn + 1;
+        }
+
+    </tbody>
+</table>
+<partial name="_PaginationFooter"
+         model="new PaginationFooter(Model.PageNumber, Model.PageSize, Model.Items.Count(), Model.FilteredCount, Model.TotalCount, Model.TotalPages)" />

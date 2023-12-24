@@ -43,11 +43,6 @@
             </div>
             <span class="text-danger" asp-validation-for="CreatedBy"></span>
         </div>
-        <div id="dynamicFieldsContainer">          
-        </div>
-            <div class="col text-end mt-3">
-                <button type="button" class="btn btn-sm btn-success" onclick="addDynamicField()">Add New Field</button>
-            </div>
         <div class="form-check form-switch">
             <input asp-for="PinnedStatus" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
             <label class="form-check-label" for="flexSwitchCheckDefault">Pin</label>
@@ -60,74 +55,61 @@
 </form><!--end form-->
 
 <script>
-    var dynamicFieldsCount = 0;
+    // var dynamicFieldsCount = 0;
 
-    function addDynamicField() {
-        var currentCount = dynamicFieldsCount++;
+    // function addDynamicField() {
+    //     var currentCount = dynamicFieldsCount++;
 
-        var dynamicFieldHtml = `
-            <div class="row dynamic-field" id="dynamicField${currentCount}">
-                <label class="mt-3 mb-2" style="font-weight: bold;">Section ${currentCount}</label>
-                <div class="form-group mb-2">
-                    <label class="form-label" for="blogHeader">Blog Header</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Header" name="DynamicFields[${currentCount}].BlogHeader">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <label class="form-label" for="blogBody">Blog Body</label>
-                    <div class="input-group">
-                        <textarea class="form-control" placeholder="Blog Body" name="DynamicFields[${currentCount}].BlogBody"></textarea>
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <label class="form-label" for="image">Image</label>
-                    <div class="input-group">
-                        <input type="file" class="dropify" name="DynamicFields[${currentCount}].ImageFile" />
-                        <img src="" height="125" width="125" alt="" hidden class="rounded me-1">
-                    </div>
-                </div>
-                <div class="col text-end">
-                    <button type="button" class="btn btn-sm btn-danger" onclick="removeDynamicField(${currentCount})">Remove Section ${currentCount}</button>
-                </div>
-            </div>
-        `;
+    //     var dynamicFieldHtml = `
+    //         <div class="row dynamic-field" id="dynamicField${currentCount}">
+    //             <label class="mt-3 mb-2" style="font-weight: bold;">Section ${currentCount}</label>
+    //             <div class="form-group mb-2">
+    //                 <label class="form-label" for="blogHeader">Blog Header</label>
+    //                 <div class="input-group">
+    //                     <input type="text" class="form-control" placeholder="Header" name="DynamicFields[${currentCount}].BlogHeader">
+    //                 </div>
+    //             </div>
+    //             <div class="form-group mb-2">
+    //                 <label class="form-label" for="blogBody">Blog Body</label>
+    //                 <div class="input-group">
+    //                     <textarea class="form-control" placeholder="Blog Body" name="DynamicFields[${currentCount}].BlogBody"></textarea>
+    //                 </div>
+    //             </div>
+    //             <div class="form-group mb-2">
+    //                 <label class="form-label" for="image">Image</label>
+    //                 <div class="input-group">
+    //                     <input type="file" class="dropify" name="DynamicFields[${currentCount}].ImageFile" />
+    //                     <img src="" height="125" width="125" alt="" hidden class="rounded me-1">
+    //                 </div>
+    //             </div>
+    //             <div class="col text-end">
+    //                 <button type="button" class="btn btn-sm btn-danger" onclick="removeDynamicField(${currentCount})">Remove Section ${currentCount}</button>
+    //             </div>
+    //         </div>
+    //     `;
 
-        document.getElementById('dynamicFieldsContainer').insertAdjacentHTML('beforeend', dynamicFieldHtml);
-    }
-
+    //     document.getElementById('dynamicFieldsContainer').insertAdjacentHTML('beforeend', dynamicFieldHtml);
+    // }
 
     // function removeDynamicField(dynamicFieldId) {
     //     var dynamicField = document.getElementById(`dynamicField${dynamicFieldId}`);
     //     dynamicField.remove();
+
+    //     var dynamicFields = document.querySelectorAll('.dynamic-field');
+    //     dynamicFields.forEach(function (field, index) {
+    //         var currentId = field.id.replace('dynamicField', '');
+    //         if (index >= dynamicFieldId) {
+    //             field.id = `dynamicField${parseInt(currentId) - 1}`;
+    //             field.querySelector('label').innerText = `Section ${parseInt(currentId) - 1}`;
+    //             field.querySelectorAll('[name]').forEach(function (element) {
+    //                 var attributeName = element.getAttribute('name');
+    //                 element.setAttribute('name', attributeName.replace(`DynamicFields[${currentId}]`, `DynamicFields[${parseInt(currentId) - 1}]`));
+    //             });
+    //             field.querySelector('button').innerText = `Remove Section ${parseInt(currentId) - 1}`;
+    //         }
+    //     });
+    //     dynamicFieldsCount--;
     // }
-    function removeDynamicField(dynamicFieldId) {
-        var dynamicField = document.getElementById(`dynamicField${dynamicFieldId}`);
-        dynamicField.remove();
-
-        // Update the IDs of the remaining dynamic fields
-        var dynamicFields = document.querySelectorAll('.dynamic-field');
-        dynamicFields.forEach(function (field, index) {
-            var currentId = field.id.replace('dynamicField', '');
-            if (index >= dynamicFieldId) {
-                // Update the ID and labels
-                field.id = `dynamicField${parseInt(currentId) - 1}`;
-                field.querySelector('label').innerText = `Section ${parseInt(currentId) - 1}`;
-
-                // Update the name attributes
-                field.querySelectorAll('[name]').forEach(function (element) {
-                    var attributeName = element.getAttribute('name');
-                    element.setAttribute('name', attributeName.replace(`DynamicFields[${currentId}]`, `DynamicFields[${parseInt(currentId) - 1}]`));
-                });
-
-                // Update the button text
-                field.querySelector('button').innerText = `Remove Section ${parseInt(currentId) - 1}`;
-            }
-        });
-
-        // Update the dynamicFieldsCount
-        dynamicFieldsCount--;
-    }
         FormHandler.init({
             method: 'POST',
             actionUrl: '@Url.Action("SavePost", "AdminBlog")',

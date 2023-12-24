@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\BalanceLogReportExcelReports_20231219102240922.xlsx"
     },
     {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Image2_2023_12_23_09_59_06_5031.png",
+      "PackagePath": "staticwebassets\\BlogImages\\Image2_2023_12_23_09_59_06_5031.png"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Main Image_2023_12_23_09_58_57_9851.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\Main Image_2023_12_23_09_58_57_9851.jpg"
+    },
+    {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg",
       "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg"
     },
@@ -45,8 +53,28 @@
       "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_09_15_2614.jpg"
     },
     {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_17_02_7026.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_19_17_17_02_7026.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_36_5655.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_36_5655.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_43_0797.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_54_43_0797.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_55_26_2714.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_55_26_2714.jpg"
+    },
+    {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_06_14_37_16_3218.jpg",
       "PackagePath": "staticwebassets\\BlogImages\\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_06_14_37_16_3218.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\image 3_2023_12_23_09_59_06_5191.png",
+      "PackagePath": "staticwebassets\\BlogImages\\image 3_2023_12_23_09_59_06_5191.png"
     },
     {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg",
@@ -103,6 +131,26 @@
     {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_11_12_8680.jpg",
       "PackagePath": "staticwebassets\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_11_12_8680.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_16_59_4659.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_16_59_4659.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_17_02_7070.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_19_17_17_02_7070.jpg"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_20_54_3510.png",
+      "PackagePath": "staticwebassets\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_20_54_3510.png"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_00_5672.png",
+      "PackagePath": "staticwebassets\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_00_5672.png"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_18_2130.png",
+      "PackagePath": "staticwebassets\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_18_2130.png"
     },
     {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_14_32_16_8600.jpg",
