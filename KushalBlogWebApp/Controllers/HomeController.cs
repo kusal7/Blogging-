@@ -32,8 +32,8 @@ namespace KushalBlogWebApp.Controllers
         {
             ViewBag.Id = Id;
             ViewBag.AllPinnedBlogList = await _blogService.GetAllPinnedBlogList();
-            ViewBag.AllPinnedBlogList = await _blogService.GetAllPinnedBlogList();
             ViewBag.AllBlogComments = await _blogService.GetBlogComments(Id);
+            ViewBag.AllChildBlogs = await _blogService.GetChildBlogsData(Id);
             var blogDetails = await _blogService.GetSingleBlogDetails(Id);
             var commentsData = await _blogService.GetBlogComments(Id);
 

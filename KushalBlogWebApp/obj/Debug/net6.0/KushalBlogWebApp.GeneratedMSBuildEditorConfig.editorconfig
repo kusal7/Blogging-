@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXENoaWxkQmxvZ0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/DeleteChildBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXERlbGV0ZUNoaWxkQmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/KushalSir/KushalBlogWebApp/KushalBlogWebApp/Views/AdminBlog/DeletePost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nXERlbGV0ZVBvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

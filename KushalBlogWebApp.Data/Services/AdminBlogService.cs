@@ -161,7 +161,7 @@ namespace KushalBlogWebApp.Data.Services
                     var p = new DynamicParameters();
                     await db.OpenAsync();
                     p.Add("@Id", Id);
-          
+
                     p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
                     p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
@@ -296,7 +296,7 @@ namespace KushalBlogWebApp.Data.Services
                     var param = new DynamicParameters();
                     await db.OpenAsync();
                     param.Add("@Id", Id);
-                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllChildBlogDetails]",param:param, commandType: CommandType.StoredProcedure);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllChildBlogDetails]", param: param, commandType: CommandType.StoredProcedure);
 
                     var blogLost = await datas.ReadAsync<AdminBlogModel>();
                     var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
@@ -325,6 +325,38 @@ namespace KushalBlogWebApp.Data.Services
                     var data = await db.QuerySingleAsync<AddNewChildBlogVm>(sql: "[dbo].[usp_GetChildBlogPostById]", param: param, commandType: CommandType.StoredProcedure);
                     return data;
 
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<SpResponseMessage> DeleteChildBlogPost(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var p = new DynamicParameters();
+                    await db.OpenAsync();
+                    p.Add("@Id", Id);
+                 
+                    p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
+                    p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    var result = await db.ExecuteAsync("[USP_DeleteChildBlog]", param: p, commandType: CommandType.StoredProcedure);
+                    var spresponsemessage = new SpResponseMessage
+                    {
+                        ReturnId = p.Get<int>("@Return_Id"),
+                        Msg = p.Get<string>("@Msg"),
+                        StatusCode = p.Get<int>("@StatusCode"),
+                        MsgType = p.Get<string>("@MsgType")
+                    };
+                    return spresponsemessage;
                 }
             }
             catch (Exception)

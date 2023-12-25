@@ -16,6 +16,7 @@ namespace KushalBlogWebApp.Data.IServices
         //public Task<SpResponseMessage> SaveBlogComment(SaveBlogComment saveBlogComment);
         public  Task<(SpResponseMessage, IEnumerable<BlogsComment>)> SaveBlogComment(SaveBlogComment saveBlogComment);
         public Task<IEnumerable<BlogsComment>> GetBlogComments(int Id);
+        public Task<IEnumerable<AddNewChildBlogSaveVm>> GetChildBlogsData(int Id);
 
     }
 }

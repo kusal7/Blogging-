@@ -216,6 +216,30 @@ namespace KushalBlogWebApp.Controllers
             }
         }
         #endregion
+        #region Delete Child Blog
+        [HttpGet]
+        public IActionResult DeleteChildBlog(int Id)
+        {
+            ViewBag.Id = Id;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteChildBlog(AddNewChildBlogVm adminBlogModelVm)
+        {
+
+            var responseMessage = await _adminblogservice.DeleteChildBlogPost(adminBlogModelVm.Id);
+            if (responseMessage.ReturnId > 0)
+            {
+                _notyfService.Success(responseMessage.Msg);
+                return Ok();
+            }
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            var errors = new List<string> { responseMessage.Msg };
+            ViewBag.Error = errors;
+            return PartialView();
+        }
+        #endregion
 
         #region Blog Child Listing
         [HttpGet]

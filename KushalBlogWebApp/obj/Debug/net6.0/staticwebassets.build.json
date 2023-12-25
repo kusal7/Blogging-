@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cNAsdLDnl3bTybVpvl80kOBZUQU6Ftmp5M9HF33CjXk=",
+  "Hash": "wgiH+MnyhRVIi7WT44fYkNw8+vqgq69Fr+DkJS4u7hs=",
   "Source": "KushalBlogWebApp",
   "BasePath": "_content/KushalBlogWebApp",
   "Mode": "Default",
@@ -493,6 +493,23 @@
       "OriginalItemSpec": "wwwroot\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_24_15_53_18_2130.png"
     },
     {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_25_15_17_00_6180.png",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/viber_image_2023-12-24_16-15-34-871_2023_12_25_15_17_00_6180.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\viber_image_2023-12-24_16-15-34-871_2023_12_25_15_17_00_6180.png"
+    },
+    {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_04_15_00_36_3154.jpg",
       "SourceId": "KushalBlogWebApp",
       "SourceType": "Discovered",
@@ -714,6 +731,40 @@
       "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_24_15_55_26_2714.jpg"
     },
     {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_25_09_31_22_1699.jpg",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_25_09_31_22_1699.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_25_09_31_22_1699.jpg"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_25_09_31_42_3002.jpg",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_25_09_31_42_3002.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-01 at 15.32.51_85d2241e_2023_12_25_09_31_42_3002.jpg"
+    },
+    {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_06_14_37_16_3218.jpg",
       "SourceId": "KushalBlogWebApp",
       "SourceType": "Discovered",
@@ -729,6 +780,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogImages\\WhatsApp Image 2023-11-19 at 11.24.36_5df5f5c1_2023_12_06_14_37_16_3218.jpg"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Year in Chess - intro_2023_12_25_15_17_09_2441.png",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/Year in Chess - intro_2023_12_25_15_17_09_2441.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\Year in Chess - intro_2023_12_25_15_17_09_2441.png"
     },
     {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\css\\assetsCss\\app.min.css",

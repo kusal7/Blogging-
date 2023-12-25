@@ -174,6 +174,28 @@ namespace KushalBlogWebApp.Data.Services
                 throw;
             }
         }
+        public async Task<IEnumerable<AddNewChildBlogSaveVm>> GetChildBlogsData(int Id)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var param = new DynamicParameters();
+                    await db.OpenAsync();
+                    param.Add("@Id", Id);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetChildBlogsById]", param: param, commandType: CommandType.StoredProcedure);
+                    var blogList = await datas.ReadAsync<AddNewChildBlogSaveVm>();
+                    var mappeddata = _map.Map<IEnumerable<AddNewChildBlogSaveVm>>(blogList);
+                    return mappeddata;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

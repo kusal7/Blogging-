@@ -3,6 +3,7 @@
 @{
     var allPinnedBlogData = ViewBag.AllPinnedBlogList as IEnumerable<BlogModel>;
     var allBlogComments = ViewBag.AllBlogComments as IEnumerable<BlogsComment>;
+    var allChildBlogs = ViewBag.AllChildBlogs as IEnumerable<AddNewChildBlogSaveVm>;
 }
 
 
@@ -10,22 +11,40 @@
     <div class="row">
         <div class="col-md-9">
 
-            <div class="mb-3 text-left">
-                <img src="@Model.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-height: 500px;">
-            </div>
             <div>
-                <h5>
-                    Written Date: @Model.CreatedDate.ToString("MMMM dd, yyyy"), Written By: @Model.CreatedBy
-                </h5>
-            </div>
-            <div>
-                <h2 style="color: #333;" class="text-left">@Model.BlogHeader</h2>
-                <div class="text-left">
-                    <p style="color: #666;">@Model.BlogBody</p>
+                <div class="mb-3 text-left">
+                    <img src="@Model.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-height: 500px;">
                 </div>
-
+                <div>
+                    <h5>
+                        Written Date: @Model.CreatedDate.ToString("MMMM dd, yyyy"), Written By: @Model.CreatedBy
+                    </h5>
+                </div>
+                <div>
+                    <h2 style="color: #333;" class="text-left">@Model.BlogHeader</h2>
+                    <div class="text-left">
+                        <p style="color: #666;">@Model.BlogBody</p>
+                    </div>
+                </div>
             </div>
 
+            <div>
+                @foreach (var childBlogs in allChildBlogs)
+                {
+                    <div>
+                       <h3>
+                            @childBlogs.BlogHeader
+                       </h3>
+                       <p>
+                           @childBlogs.BlogBody
+                       </p>
+                    </div>
+                    <div>
+                        <img src="@childBlogs.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                    </div>
+                 
+                }
+            </div>
             <div class="row">
                 <div id="commentSection" class=" col mt-5">
                     <form>
@@ -108,14 +127,15 @@
                 <div class="row mt-4">
                     <div class="col-4">
                         <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @post.Id })">
-                            <img src="@post.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;"></a>
+                            <img src="@post.ImageUrl" alt="logo" class="auth-logo img-fluid" style="max-width: 100%;">
+                        </a>
 
                     </div>
                     <div class="col-8 d-flex text-left" style="max-width: 50%;">
                         <a href="@Url.Action("SingleBlogDetails", "Home", new { Id = @post.Id })">
                             <h5 class="mb-3 text-left" style="color: #333; font-weight: bold;">@post.BlogHeader</h5>
                         </a>
-                  
+
                     </div>
                 </div>
             }

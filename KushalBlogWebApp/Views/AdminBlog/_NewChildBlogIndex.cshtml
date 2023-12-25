@@ -40,7 +40,7 @@
                 <td name="buttons">
                     <div class=" float-center">
                         <button id="bEdit" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-success btn-circle me-2" data-toggle="tooltip" title="Edit Blog" onclick="ShowPopUp('@Url.Action("EditChildBlog", "AdminBlog", new { Id = item.Id })', 'Edit Blog')"><i class="dripicons-pencil"></i></button>
-                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Blog" onclick="ShowPopUp('@Url.Action("DeletePost", "AdminBlog", new { Id = item.Id })', 'Delete Blog','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
+                        <button id="bCanc" style="cursor:pointer" type="button" class="btn btn-sm btn-soft-danger btn-circle" data-toggle="tooltip" title="Delete Blog" onclick="ShowPopUp('@Url.Action("DeleteChildBlog", "AdminBlog", new { Id = item.Id })', 'Delete Blog','modal-dialog modal-md')"><i class="dripicons-cross" aria-hidden="true"></i></button>
                     </div>
                 </td>
             </tr>
