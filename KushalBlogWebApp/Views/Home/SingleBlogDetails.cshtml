@@ -58,7 +58,7 @@
                             }
                         </ul>
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="blogId" value="@ViewBag.Id">
+                            <input type="hidden" class="form-control" id="blogId" value="@Model.Id">
                             <label for="fullName">Email address or Full Name</label>
                             <input type="text" class="form-control mt-3" id="fullName" aria-describedby="emailHelp" placeholder="Enter email or fullname">
                         </div>
@@ -147,28 +147,53 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <script>
+    // function submitForm() {
+    //     var formData = {
+    //         id: parseInt($('#blogId').val(), 10),
+    //         fullName: $('#fullName').val(),
+    //         comment: $('#commentfield').val(),
+    //     };
+
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: '/Home/SaveComment',
+    //         data: formData,
+    //         success: function (response) {
+    //             console.log(response);
+    //             window.location.reload();
+    //         },
+    //         error: function (xhr, textStatus, errorThrown) {
+    //             console.error('Error:', errorThrown);
+    //         },
+    //         complete: function () {
+    //             console.log('Request complete');
+    //         }
+    //     });
+    // }
     function submitForm() {
-        var formData = {
-            id: parseInt($('#blogId').val(), 10),
-            fullName: $('#fullName').val(),
-            comment: $('#commentfield').val(),
-        };
+        var blogId = $("#blogId").val();
+        var fullName = $("#fullName").val();
+        var comment = $("#commentfield").val();
+
+        console.log("BlogId: " + blogId);
+        console.log("FullName: " + fullName);
+        console.log("Comment: " + comment);
+        debugger;
 
         $.ajax({
-            type: 'POST',
             url: '/Home/SaveComment',
-            data: formData,
+            type: 'POST',
+            data: {
+                Id: blogId,
+                FullName: fullName,
+                Comment: comment
+            },
             success: function (response) {
                 console.log(response);
-                window.location.reload();
             },
-            error: function (xhr, textStatus, errorThrown) {
-                console.error('Error:', errorThrown);
-                console.log('Status:', textStatus);
-                console.log('Response Text:', xhr.responseText);
-            },
-            complete: function () {
-                console.log('Request complete');
+            error: function (error) {
+                // Handle error, if needed
+                console.error(error);
             }
         });
     }

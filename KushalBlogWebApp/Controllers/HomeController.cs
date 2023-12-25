@@ -50,7 +50,7 @@ namespace KushalBlogWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveComment(SaveBlogComment saveBlogComment)
         {
-            ViewBag.Id  = saveBlogComment.Id;
+            
             if (!ModelState.IsValid)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
