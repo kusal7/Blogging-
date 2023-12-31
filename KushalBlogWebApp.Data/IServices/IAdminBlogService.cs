@@ -10,7 +10,7 @@ namespace KushalBlogWebApp.Data.IServices
 {
     public interface IAdminBlogService
     {
-        public Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog();
+        public Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog(AdminBlogFilterDto adminBlogFilterDto);
         public Task<SpResponseMessage> SavePost(AdminBlogModelVm adminBlogModelVm);
         public Task<AdminBlogModelVm> GetBlogPostById(int Id);
         public Task<SpResponseMessage> DeletePost(int Id);

@@ -30,8 +30,13 @@
                 <td>@item.Id</td>
                 <td>@item.BlogHeader</td>
                 <td>@item.BlogBody</td>
+
+
                 <td>
-                    <img src="@item.ImageUrl" alt="" class="rounded thumb-lg me-1 open-image" style="width: 50px; height: 50px;">
+                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" alt="" class="rounded thumb-lg me-1 open-image" style="width: 50px; height: 50px;">
+                    }
                 </td>
                 <td>@item.CreatedDate</td>
 

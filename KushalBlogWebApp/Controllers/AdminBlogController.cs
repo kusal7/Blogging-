@@ -20,9 +20,10 @@ namespace KushalBlogWebApp.Controllers
             _notyfService = notyfService;
         }
         #region Index Page
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> Index([FromQuery] AdminBlogFilterDto adminBlogFilterDto)
         {
-            var data = await _adminblogservice.GetAllDataAdminBlog();
+            var data = await _adminblogservice.GetAllDataAdminBlog(adminBlogFilterDto);
             if (WebHelper.IsAjaxRequest(Request))
             {
                 return PartialView("_AdminBlogIndex", data);
@@ -182,6 +183,7 @@ namespace KushalBlogWebApp.Controllers
         }
 
         #endregion
+
         #region Edit Child Blog
         [HttpGet]
         public async Task<IActionResult> EditChildBlog(int Id)
@@ -216,6 +218,7 @@ namespace KushalBlogWebApp.Controllers
             }
         }
         #endregion
+
         #region Delete Child Blog
         [HttpGet]
         public IActionResult DeleteChildBlog(int Id)

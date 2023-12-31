@@ -28,7 +28,7 @@
                 </div>
                 <!--end card-header-->
                 <div class="card-body">
-
+                    <partial name="_PaginationHeader" />
                     <div id="ChildAdminBlogIndex" class="table-responsive">
                         <partial name="_NewChildBlogIndex" />
                     </div>
@@ -67,7 +67,7 @@
                 e.payload.paramsBuilder.addParameters(getPaginationFieldParams());
             });
 
-            addUsersPageHandlers();
+            // addUsersPageHandlers();
             addPaginationHandlers();
 
         });

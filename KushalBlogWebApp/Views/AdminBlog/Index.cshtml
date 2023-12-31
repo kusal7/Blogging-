@@ -7,6 +7,54 @@
 }
 <div class="container">
     <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+
+                <div class="row">
+                    <div class="col">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Admin Blog</a></li>
+                            <li class="breadcrumb-item active">Blog List</li>
+                        </ol>
+                    </div><!--end col-->
+                    <div class="col-auto" style="margin-bottom: 10px;">
+                        <div class="col-auto align-self-center">
+                            <div class="general-label">
+                                <form id="FormBlogFilter" class="row row-cols-lg-auto align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="col-form-label" for="blogHeaderFilter">Blog Header</label>
+                                        <div class="input-group">
+                                            <textarea name="BlogHeader" type="text" class="form-control" placeholder="Blog Header" id="blogHeaderFilter"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="col-form-label" for="blogBodyFilter">Blog Body</label>
+                                        <div class="input-group">
+                                            <textarea name="BlogBody" type="text" class="form-control" placeholder="Blog Body" id="blogBodyFilter"></textarea>
+                                        </div>
+                                    </div>     
+                                    <div class="col-md-6">
+                                        <label class="col-form-label" for="writtenBy">Written By</label>
+                                        <div class="input-group">
+                                            <textarea name="WrittenBy" type="text" class="form-control" placeholder="Written By" id="writtenBy"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="col-form-label" for="actionButton">Action</label>
+                                        <div class="input-group">
+                                            <button id="btnBlogFilter" type="button" class="btn btn-primary"><i class="las la-filter ms-1"></i> Filter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!--end col-->
+                    </div>
+                </div><!--end row-->
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div><!--end row-->
+    <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
@@ -17,10 +65,10 @@
                         <!--end col-->
                         <div class="col-auto">
                             <div class="add-btn">
-                                 <a style="cursor:pointer" onclick="ShowPopUp('@Url.Action("SavePost","AdminBlog")','Add New Post')" class="btn btn-primary btn-shadow-2 btn-sm text-light">
+                                <a style="cursor:pointer" onclick="ShowPopUp('@Url.Action("SavePost","AdminBlog")','Add New Post')" class="btn btn-primary btn-shadow-2 btn-sm text-light">
                                     <i class="fa fa-solid fa-plus"></i>Add Post
-                                   
-                                </a> 
+
+                                </a>
                             </div>
                         </div>
                         <!--end col-->
@@ -29,9 +77,9 @@
                 </div>
                 <!--end card-header-->
                 <div class="card-body">
-            
-                   <div id="AdminBlogIndex" class="table-responsive">
-                          <partial name="_AdminBlogIndex"  />  
+                    <partial name="_PaginationHeader" />
+                    <div id="AdminBlogIndex" class="table-responsive">
+                        <partial name="_AdminBlogIndex" />
                     </div>
                 </div>
                 <!--end card-body-->
@@ -44,6 +92,8 @@
 
 
 </div><!-- container -->
+
+<script src="~/js/admin.pagination.js"></script>
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -60,7 +110,7 @@
             $(Pagination).on('before', function (e) {
                 e.preventDefault();
                 { debugger }
-                var usersFilterFormValues = $('#Formamounttypefilter').serializeArray();
+                var usersFilterFormValues = $('#FormBlogFilter').serializeArray();
                 $.each(usersFilterFormValues, function (i, obj) {
                     e.payload.paramsBuilder.addParameter(obj['name'], obj['value']);
                 });
@@ -70,6 +120,21 @@
 
             addUsersPageHandlers();
             addPaginationHandlers();
+            function addUsersPageHandlers() {
+                debugger;
+                /* Custom Handlers */
+                $('#FormBlogFilter').on('submit', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                })
+
+                $('#btnBlogFilter').on('click', function (e) {
+                    e.preventDefault();
+                    Pagination.getData();
+                    return false;
+                });
+
+            }
 
         });
 

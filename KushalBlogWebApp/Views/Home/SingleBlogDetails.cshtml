@@ -117,7 +117,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 text-right">
             <div style="border-bottom: 2px solid #000; width: 70%; margin-bottom: 15px;">
                 <h4 style="color: #333;">Recommended Posts</h4>
             </div>
@@ -147,29 +147,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <script>
-    // function submitForm() {
-    //     var formData = {
-    //         id: parseInt($('#blogId').val(), 10),
-    //         fullName: $('#fullName').val(),
-    //         comment: $('#commentfield').val(),
-    //     };
 
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: '/Home/SaveComment',
-    //         data: formData,
-    //         success: function (response) {
-    //             console.log(response);
-    //             window.location.reload();
-    //         },
-    //         error: function (xhr, textStatus, errorThrown) {
-    //             console.error('Error:', errorThrown);
-    //         },
-    //         complete: function () {
-    //             console.log('Request complete');
-    //         }
-    //     });
-    // }
     function submitForm() {
         var blogId = $("#blogId").val();
         var fullName = $("#fullName").val();

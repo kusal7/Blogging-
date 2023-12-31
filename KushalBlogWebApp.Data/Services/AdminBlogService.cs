@@ -31,7 +31,7 @@ namespace KushalBlogWebApp.Data.Services
             _config = configuration;
         }
 
-        public async Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog()
+        public async Task<PagedResponse<AdminBlogModel>> GetAllDataAdminBlog(AdminBlogFilterDto adminBlogFilterDto)
         {
             try
             {
@@ -39,9 +39,9 @@ namespace KushalBlogWebApp.Data.Services
                 var dbfactory = DbFactoryProvider.GetFactory();
                 using (var db = (DbConnection)dbfactory.GetConnection())
                 {
-                    var param = new DynamicParameters();
+                    var param = adminBlogFilterDto.PrepareDynamicParameters();
                     await db.OpenAsync();
-                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlogAdminPanel]", commandType: CommandType.StoredProcedure);
+                    var datas = await db.QueryMultipleAsync(sql: "[dbo].[USP_GetAllBlogAdminPanel]", param: param, commandType: CommandType.StoredProcedure);
 
                     var blogLost = await datas.ReadAsync<AdminBlogModel>();
                     var pagedInfo = await datas.ReadFirstAsync<PagedInfo>();
@@ -343,7 +343,7 @@ namespace KushalBlogWebApp.Data.Services
                     var p = new DynamicParameters();
                     await db.OpenAsync();
                     p.Add("@Id", Id);
-                 
+
                     p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
                     p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
                     p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
