@@ -197,5 +197,41 @@ namespace KushalBlogWebApp.Data.Services
             }
         }
 
+        //admin login and authentication
+        public async Task<(AdminLoginVm, SpResponseMessage)> GetAdminUserUsernamePassword(AdminLoginVm adminUserVm)
+        {
+            try
+            {
+                var dbfactory = DbFactoryProvider.GetFactory();
+                using (var db = (DbConnection)dbfactory.GetConnection())
+                {
+                    var p = new DynamicParameters();
+                    await db.OpenAsync();
+                    p.Add("@Username", adminUserVm.Username);
+                    p.Add("@Password", adminUserVm.Password);
+                    p.Add("@Return_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@Msg", dbType: DbType.String, size: 200, direction: ParameterDirection.Output);
+                    p.Add("@StatusCode", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    p.Add("@MsgType", dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
+                    var data = await db.QueryFirstOrDefaultAsync<AdminLoginVm>(sql: "[dbo].[usp_GetAdminUserUsernamePassword]", param: p, commandType: CommandType.StoredProcedure);
+                    var spresponsemessage = new SpResponseMessage
+                    {
+                        ReturnId = p.Get<int>("@Return_Id"),
+                        Msg = p.Get<string>("@Msg"),
+                        StatusCode = p.Get<int>("@StatusCode"),
+                        MsgType = p.Get<string>("@MsgType")
+                    };
+                    db.Close();
+                    return (data, spresponsemessage);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

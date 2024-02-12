@@ -4,6 +4,7 @@ using AutoMapper;
 using DBManager;
 using KushalBlogWebApp.Data.IServices;
 using KushalBlogWebApp.Data.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.DependencyInjection;
 using TeamEleven.Data.Common;
 
@@ -33,6 +34,46 @@ builder.Services.AddNotyf(config =>
     config.DurationInSeconds = 5; config.IsDismissable = true; config.Position = NotyfPosition.TopRight;
 });
 
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(o =>
+    {
+
+        //o.ExpireTimeSpan = TimeSpan.FromDays(5);
+        o.ExpireTimeSpan = TimeSpan.FromMinutes(15);
+        o.Events = new CookieAuthenticationEvents
+        {
+            OnValidatePrincipal = context =>
+            {
+                if (context.Request.Query.TryGetValue("returnUrl", out var returnUrl))
+                {
+                    // Store the returnUrl in the authentication ticket
+                    context.Properties.RedirectUri = returnUrl;
+                }
+                return Task.CompletedTask;
+            },
+            //OnRedirectToLogin = context =>
+            //{
+            //    if (!context.Request.Path.StartsWithSegments("/Account/Login"))
+            //    {
+            //        // Store the original request path as the custom return URL
+            //        context.Response.Redirect("/Home/AdminLoginPage?returnUrl=" + Uri.EscapeDataString(context.Request.Path));
+            //    }
+            //    return Task.CompletedTask;
+            //}
+
+            OnRedirectToLogin = context =>
+            {
+                // Check if the request path does not start with the Admin login path
+                if (!context.Request.Path.StartsWithSegments("/Home/AdminLoginPage"))
+                {
+                    // Store the original request path as the custom return URL
+                    context.Response.Redirect("/Home/AdminLoginPage?returnUrl=" + Uri.EscapeDataString(context.Request.Path));
+                }
+                return Task.CompletedTask;
+            }
+        };
+    });
 
 
 var app = builder.Build();

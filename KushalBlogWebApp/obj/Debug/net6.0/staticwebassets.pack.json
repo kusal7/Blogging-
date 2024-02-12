@@ -5,12 +5,12 @@
       "PackagePath": "staticwebassets\\Annotation 2023-10-12 161815_2023_12_04_14_38_47_4120.png"
     },
     {
-      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BalanceLogReportExcelReports_20231219102240922.xlsx",
-      "PackagePath": "staticwebassets\\BalanceLogReportExcelReports_20231219102240922.xlsx"
-    },
-    {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Image2_2023_12_23_09_59_06_5031.png",
       "PackagePath": "staticwebassets\\BlogImages\\Image2_2023_12_23_09_59_06_5031.png"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Linear_2024_02_04_11_12_46_0914.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\Linear_2024_02_04_11_12_46_0914.jpg"
     },
     {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Main Image_2023_12_23_09_58_57_9851.jpg",
@@ -87,6 +87,10 @@
     {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\image 3_2023_12_23_09_59_06_5191.png",
       "PackagePath": "staticwebassets\\BlogImages\\image 3_2023_12_23_09_59_06_5191.png"
+    },
+    {
+      "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\logistic_2024_02_04_11_13_17_0785.jpg",
+      "PackagePath": "staticwebassets\\BlogImages\\logistic_2024_02_04_11_13_17_0785.jpg"
     },
     {
       "Id": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg",

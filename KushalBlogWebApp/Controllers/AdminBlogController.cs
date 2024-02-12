@@ -6,9 +6,11 @@ using KushalBlogWebApp.Data.IServices;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using KushalBlogWebApp.Models;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KushalBlogWebApp.Controllers
 {
+    [Authorize]
     public class AdminBlogController : Controller
     {
 
@@ -19,6 +21,8 @@ namespace KushalBlogWebApp.Controllers
             _adminblogservice = adminBlogService;
             _notyfService = notyfService;
         }
+
+
         #region Index Page
         [HttpGet]
         public async Task<IActionResult> Index([FromQuery] AdminBlogFilterDto adminBlogFilterDto)

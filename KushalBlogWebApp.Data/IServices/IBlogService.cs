@@ -18,5 +18,8 @@ namespace KushalBlogWebApp.Data.IServices
         public Task<IEnumerable<BlogsComment>> GetBlogComments(int Id);
         public Task<IEnumerable<AddNewChildBlogSaveVm>> GetChildBlogsData(int Id);
 
+
+        public Task<(AdminLoginVm, SpResponseMessage)> GetAdminUserUsernamePassword(AdminLoginVm adminUserVm);
+
     }
 }

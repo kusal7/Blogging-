@@ -71,3 +71,4 @@ D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\refint\KushalBlo
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.pdb
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.genruntimeconfig.cache
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\ref\KushalBlogWebApp.dll
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.sourcelink.json

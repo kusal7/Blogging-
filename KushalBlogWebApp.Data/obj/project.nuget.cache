@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xeKLcRmYzYkogYh9zzJnIhXROiYPhjB/0jlYFuL8E4FLb/M/XLRq5OpyC/uCPt2T9TY7mrL/Rblj7cA3IvhmdQ==",
+  "dgSpecHash": "jM+Jh+D2wS+QW4qk7/xXX1wNGKGw+9dLs1SdpeWrGZNobZcutTdJlbd5FC7nvpq+4jVcSct8gag+p4ll0JTTfA==",
   "success": true,
   "projectFilePath": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp.Data\\KushalBlogWebApp.Data.csproj",
   "expectedPackageFiles": [
@@ -87,5 +87,16 @@
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\gaurab.shrestha\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SqlClient' 4.8.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

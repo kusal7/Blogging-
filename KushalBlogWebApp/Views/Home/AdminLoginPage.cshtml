@@ -1,0 +1,156 @@
+﻿@using KushalBlogWebApp.Data.Common.Paging
+@using KushalBlogWebApp.Data.Model
+@model AdminLoginVm
+@{
+
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>Team 11 Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/images/logo-sm.png">
+
+    <!-- App css -->
+
+
+    <link href="~/css/assetsCss/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/assetsCss/app.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="account-body accountbg">
+
+    <!-- Log In page -->
+    <div class="container">
+        <div class="row vh-100 d-flex justify-content-center">
+            <div class="col-12 align-self-center">
+                <div class="row">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="card">
+                            <div class="card-body p-0 auth-header-box">
+                                <div class="text-center p-3">
+                                
+                                    <p class="text-muted  mb-0">Sign in to continue to Kushal's Blog Panel.</p>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+
+                                <div class="p-3">
+                                    <form class="form-horizontal auth-form" method="post" asp-action="AdminLoginPage" asp-controller="Home">
+                                        <ul>
+                                            @if (ViewBag.Error is not null)
+                                            {
+
+
+                                                <li class="text-danger">@ViewBag.Error</li>
+
+                                            }
+                                        </ul>
+                                        <input type="hidden" asp-for="ReturnUrl" />
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="username">Username</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" asp-for="Username" name="Username" id="username" placeholder="Enter username" value="gaurabstha">
+                                            </div>
+                                        </div><!--end form-group-->
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label">Password</label>
+                                            <div class="input-group">
+                                                <input asp-for="Password" type="password" id="password" class="form-control" placeholder="Eg.*" value="Test@123">
+                                                <button type="button" id="togglePassword" class="btn btn-outline-secondary" onclick="togglePasswordVisibility()">
+                                                    <i id="passwordEyeIcon" class="las la-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div><!--end form-group-->
+
+                             
+
+                                        <div class="form-group mb-0 row">
+                                            <div class="col-12">
+                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Log In <i class="fas fa-sign-in-alt ms-1"></i></button>
+
+                                            </div><!--end col-->
+                                        </div> <!--end form-group-->
+                                    </form><!--end form-->
+
+
+                                </div>
+                            </div><!--end card-body-->
+                            <div class="card-body bg-light-alt text-center">
+                                <span class="text-muted d-none d-sm-inline-block">
+                                    Team 11 © <script>
+                                                  document.write(new Date().getFullYear())
+
+
+                                    </script>
+                                </span>
+                            </div>
+                        </div><!--end card-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+    <div id="add-new" class="modal fade bd-example-modal-lg" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myLargeModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+                <div class="modal-body">
+
+                    <!-- [ Model Body ] -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Log In page -->
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="~/assetsJs/jquery.min.js"></script>
+    <script src="~/assetsJs/bootstrap.bundle.min.js"></script>
+    <script src="~/assetsJs/waves.js"></script>
+    <script src="~/assetsJs/feather.min.js"></script>
+    <script src="~/assetsJs/simplebar.min.js"></script>
+    <script src="~/js/Site.js"></script>
+    <script src="~/js/post.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @*  <script src="~/assetsjs/app.js"></script>*@
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var eyeIcon = document.getElementById("passwordEyeIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("la-eye");
+                eyeIcon.classList.add("la-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("la-eye-slash");
+                eyeIcon.classList.add("la-eye");
+            }
+        }
+    </script>
+</body>
+
+
+</html>

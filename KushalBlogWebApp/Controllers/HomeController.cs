@@ -4,8 +4,13 @@ using DocumentFormat.OpenXml.Office2010.Excel;
 using KushalBlogWebApp.Common.Helper;
 using KushalBlogWebApp.Data.IServices;
 using KushalBlogWebApp.Data.Model;
+using KushalBlogWebApp.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Security.Claims;
 
 namespace KushalBlogWebApp.Controllers
 {
@@ -18,6 +23,55 @@ namespace KushalBlogWebApp.Controllers
             _blogService = blogService;
             _notyfService = notyfService;
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AdminLoginPage(string returnUrl = "/Home/AdminLoginPage")
+        {
+            if (User?.Identity != null && User.Identity.IsAuthenticated)
+            {
+                return LocalRedirect("~/AdminBlog/Index");
+            }
+            return View(new AdminLoginVm { ReturnUrl = returnUrl });
+
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AdminLoginPage(AdminLoginVm adminLoginVm, string returnUrl)
+        {
+            var (data, responseMessage) = await _blogService.GetAdminUserUsernamePassword(adminLoginVm);
+            if (responseMessage.StatusCode != 200)
+            {
+                ViewBag.Error = responseMessage.Msg;
+                return View();
+            }
+ 
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier,data.Id.ToString()),
+                new Claim(ClaimTypes.Name,data.Username),
+            };
+
+            var identity = new ClaimsIdentity(claims,
+                CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var principle = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                principle,
+                new AuthenticationProperties { IsPersistent = adminLoginVm.Rememberme, RedirectUri = returnUrl });
+
+            if (returnUrl != "/Home/AdminLoginPage")
+            {
+                return LocalRedirect(returnUrl);
+            }
+            return LocalRedirect("~/AdminBlog/Index");
+
+
+        }
+
+        #region Index
         public async Task<IActionResult> Index()
         {
 
@@ -26,6 +80,7 @@ namespace KushalBlogWebApp.Controllers
                 ViewBag.AllPinnedBlogList = await _blogService.GetAllPinnedBlogList();
             return View();
         }
+        #endregion
         #region Single Blog Details
         [HttpGet]
         public async Task<IActionResult> SingleBlogDetails(int Id)
@@ -44,8 +99,6 @@ namespace KushalBlogWebApp.Controllers
             return View(blogDetails);      
         }
         #endregion
-
-
         #region Save Comment
         [HttpPost]
         public async Task<IActionResult> SaveComment(SaveBlogComment saveBlogComment)
