@@ -5,7 +5,6 @@ using DBManager;
 using KushalBlogWebApp.Data.IServices;
 using KushalBlogWebApp.Data.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.Extensions.DependencyInjection;
 using TeamEleven.Data.Common;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,26 +51,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                 }
                 return Task.CompletedTask;
             },
-            //OnRedirectToLogin = context =>
-            //{
-            //    if (!context.Request.Path.StartsWithSegments("/Account/Login"))
-            //    {
-            //        // Store the original request path as the custom return URL
-            //        context.Response.Redirect("/Home/AdminLoginPage?returnUrl=" + Uri.EscapeDataString(context.Request.Path));
-            //    }
-            //    return Task.CompletedTask;
-            //}
-
             OnRedirectToLogin = context =>
             {
-                // Check if the request path does not start with the Admin login path
-                if (!context.Request.Path.StartsWithSegments("/Home/AdminLoginPage"))
+                if (!context.Request.Path.StartsWithSegments("/AdminBlog/Index"))
                 {
                     // Store the original request path as the custom return URL
-                    context.Response.Redirect("/Home/AdminLoginPage?returnUrl=" + Uri.EscapeDataString(context.Request.Path));
+                    context.Response.Redirect("/AdminBlog/Index?returnUrl=" + Uri.EscapeDataString(context.Request.Path));
                 }
                 return Task.CompletedTask;
             }
+
+
         };
     });
 
@@ -91,7 +81,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

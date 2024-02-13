@@ -1,12 +1,10 @@
-﻿using KushalBlogWebApp.Data.Model;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using KushalBlogWebApp.Common.Helper;
 using KushalBlogWebApp.Data.IServices;
-using AspNetCoreHero.ToastNotification.Abstractions;
-using KushalBlogWebApp.Models;
-using System.ComponentModel.DataAnnotations;
+using KushalBlogWebApp.Data.Model;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace KushalBlogWebApp.Controllers
 {

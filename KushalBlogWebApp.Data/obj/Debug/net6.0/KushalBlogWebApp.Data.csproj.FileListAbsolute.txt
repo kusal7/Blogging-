@@ -6,8 +6,8 @@ D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogW
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.AssemblyInfoInputs.cache
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.AssemblyInfo.cs
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.csproj.CoreCompileInputs.cache
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.sourcelink.json
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.dll
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\refint\KushalBlogWebApp.Data.dll
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.pdb
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\ref\KushalBlogWebApp.Data.dll
-D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp.Data\obj\Debug\net6.0\KushalBlogWebApp.Data.sourcelink.json

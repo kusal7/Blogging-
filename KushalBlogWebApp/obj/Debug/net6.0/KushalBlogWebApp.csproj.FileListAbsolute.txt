@@ -57,13 +57,14 @@ D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.MvcApplicationPartsAssemblyInfo.cache
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.RazorAssemblyInfo.cache
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.RazorAssemblyInfo.cs
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.sourcelink.json
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets.build.json
+D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets.development.json
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets\msbuild.KushalBlogWebApp.Microsoft.AspNetCore.StaticWebAssets.props
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets\msbuild.build.KushalBlogWebApp.props
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.KushalBlogWebApp.props
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.KushalBlogWebApp.props
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets.pack.json
-D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets.build.json
-D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\staticwebassets.development.json
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\scopedcss\bundle\KushalBlogWebApp.styles.css
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.csproj.CopyComplete
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.dll
@@ -71,4 +72,3 @@ D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\refint\KushalBlo
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.pdb
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.genruntimeconfig.cache
 D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\ref\KushalBlogWebApp.dll
-D:\KushalSir\KushalBlogWebApp\KushalBlogWebApp\obj\Debug\net6.0\KushalBlogWebApp.sourcelink.json
