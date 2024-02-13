@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3GCiiMrLOIf4EbW0p1OZShF5/wSppqBIS6vLIc9i6mg=",
+  "Hash": "k5wT3ejYgHtxxopSx6iM9uZfhUD2qgL5No5w5KzTUdA=",
   "Source": "KushalBlogWebApp",
   "BasePath": "_content/KushalBlogWebApp",
   "Mode": "Default",
@@ -150,25 +150,6 @@
       "OriginalItemSpec": "wwwroot\\BlogImages\\Image2_2023_12_23_09_59_06_5031.png"
     },
     {
-      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Linear_2024_02_04_11_12_46_0914.jpg",
-      "SourceId": "KushalBlogWebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
-      "BasePath": "_content/KushalBlogWebApp",
-      "RelativePath": "BlogImages/Linear_2024_02_04_11_12_46_0914.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\BlogImages\\Linear_2024_02_04_11_12_46_0914.jpg"
-    },
-    {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\logistic_2024_02_04_11_13_17_0785.jpg",
       "SourceId": "KushalBlogWebApp",
       "SourceType": "Discovered",
@@ -205,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\BlogImages\\Main Image_2023_12_23_09_58_57_9851.jpg"
+    },
+    {
+      "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\Screenshot 2023-11-21 133234_2024_02_13_16_07_18_3374.png",
+      "SourceId": "KushalBlogWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\",
+      "BasePath": "_content/KushalBlogWebApp",
+      "RelativePath": "BlogImages/Screenshot 2023-11-21 133234_2024_02_13_16_07_18_3374.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BlogImages\\Screenshot 2023-11-21 133234_2024_02_13_16_07_18_3374.png"
     },
     {
       "Identity": "D:\\KushalSir\\KushalBlogWebApp\\KushalBlogWebApp\\wwwroot\\BlogImages\\viber_image_2023-12-13_10-07-22-272_2023_12_16_13_03_06_7022.jpg",
